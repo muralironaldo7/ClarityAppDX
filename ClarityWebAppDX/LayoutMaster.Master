@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutMaster.master.cs" Inherits="ClarityWebAppDX.LayoutMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>PPG Health - Clarity Administration</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- ************** CSS FILES GO HERE ******************** -->
+    <link href="Helpers/bootstrap.min.css" rel="stylesheet" />
+    <link href="Helpers/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Helpers/SiteStyle.css" rel="stylesheet" />
+
+    <!-- ************** JS FILES GO HERE ******************** -->
+    <script src="Helpers/jquery.min.js"></script>
+    <script src="Helpers/bootstrap.min.js"></script>
+
+    <!-- ************** HEAD CONTENT ******************** -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="row">
+            <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

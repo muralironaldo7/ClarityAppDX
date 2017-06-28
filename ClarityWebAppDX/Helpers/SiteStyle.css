@@ -1,0 +1,88 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Athiti');
+
+
+/*
+    Base Colors:
+    Violet: #4f2b7c
+    Green: #4bb34a
+*/
+body, html {
+    background-color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
+.row{
+    margin-left:0px;
+    margin-right:0px;
+
+}
+
+
+.card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 1rem;
+    position: relative;
+}
+
+
+.cardShadow {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#LoginCard {
+    width: 100%;
+    min-height: 200px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.toolbar-row {
+    min-height: 60px;
+    background-color: #4f2b7c; /*Violet PPG Health*/
+    width: 100%;
+    padding-top: 5px
+}
+
+.TitleText {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: 'Athiti', sans-serif;
+    font-variant-caps: all-small-caps;
+}
+
+.imagerow {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.imagerow img {
+    width: 150px;
+    margin-top: 20px;
+    margin: auto;
+}
+
+.darkFont{
+    color: #494949;
+}
+
+.LabelText {
+    font-size: 16px;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 600;
+    min-height: 36px;
+    padding-top: 5px;
+}
+
+.divider {
+    margin-top: 15px;
+    border-color: #4bb34a;
+}
+
+.FormRow {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
