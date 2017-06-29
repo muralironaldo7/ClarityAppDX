@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ContentMaster.master.cs" Inherits="ClarityWebAppDX.ContentMaster" %>
+
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>PPG Health - Clarity Administration</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- ************** CSS FILES GO HERE ******************** -->
+    <link href="Helpers/bootstrap.min.css" rel="stylesheet" />
+    <link href="Helpers/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Helpers/SiteStyle.css" rel="stylesheet" />
+
+    <!-- ************** JS FILES GO HERE ******************** -->
+    <script src="Helpers/jquery.min.js"></script>
+    <script src="Helpers/bootstrap.min.js"></script>
+
+    <!-- ************** HEAD CONTENT ******************** -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="row">
+            <dx:ASPxPanel ID="TopPanel" runat="server" Width="100%" FixedPosition="WindowTop" FixedPositionOverlap="true" CssClass="hidden-xs">
+                <PanelCollection>
+                    <dx:PanelContent runat="server">
+                        <div class="col-xs-3">
+                            <img src="Images/logo.png" class="sidebarimg topimage"/>
+                        </div>
+                        <div class="col-xs-5 col-xs-offset-4 text-right sessioninfo">
+                            <div class="row">
+                                <div class="col-xs-12 text-right">
+                                    <img src="Images/Icons/Profile.png" width="30" />
+                                    <dx:ASPxLabel ID="lblFullName" runat="server" Text="muralironaldo7@gmail.com" CssClass="sessioninfotext"></dx:ASPxLabel>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3 col-xs-offset-9 text-right">
+                                    <asp:LinkButton ID="cmdLogout" runat="server" CssClass="sessioninfotext LinkButton">Logout</asp:LinkButton>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxPanel>
+
+            <dx:ASPxPanel ID="LeftPanel" runat="server" Width="300px" Collapsible="true" FixedPosition="WindowLeft" FixedPositionOverlap="true" CssClass="text-center">
+                <SettingsAdaptivity CollapseAtWindowInnerWidth="1300" />
+                <PanelCollection>
+                    <dx:PanelContent runat="server">
+                        <img src="Images/logo.png" class="sidebarimg visible-xs"/>
+
+                        <dx:ASPxNavBar ID="LeftMenuBar" runat="server" AllowSelectItem="true" EnableAnimation="true" Width="100%" OnItemClick="LeftMenuBar_ItemClick" ShowExpandButtons="false">
+                            <GroupHeaderStyle BackColor="#dddddd" Border-BorderStyle="None" Font-Bold="true" Font-Size="Medium" ForeColor="#4bb34a"></GroupHeaderStyle>
+                            <GroupHeaderStyleCollapsed BackColor="White"></GroupHeaderStyleCollapsed>
+                            <GroupContentStyle BackColor="White" Border-BorderStyle="None"></GroupContentStyle>
+                            <Groups>
+                                <dx:NavBarGroup Text="Navigation">
+                                    <Items>
+                                        <dx:NavBarItem Text="Dashboard" Name="Dashboard">
+                                            <Image Height="40px" Url="Images/Icons/Dashboard.png"></Image>
+                                        </dx:NavBarItem>
+                                    </Items>
+                                </dx:NavBarGroup>
+                                <dx:NavBarGroup Text="Questionnaire">
+                                    <Items>
+                                        <dx:NavBarItem Text="New Questionnaire" Name="NewQuestionnaire">
+                                            <Image Height="40px" Url="Images/Icons/New.png"></Image>
+                                        </dx:NavBarItem>
+                                        <dx:NavBarItem Text="Edit Questionnaire">
+                                            <Image Height="40px" Url="Images/Icons/Edit.png"></Image>
+                                        </dx:NavBarItem>
+                                    </Items>
+                                </dx:NavBarGroup>
+                                <dx:NavBarGroup Text="Reports">
+                                    <Items>
+                                        <dx:NavBarItem Text="Patient Report">
+                                            <Image Height="40px" Url="Images/Icons/Report.png"></Image>
+                                        </dx:NavBarItem>
+                                    </Items>
+                                </dx:NavBarGroup>
+                            </Groups>
+                        </dx:ASPxNavBar>
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxPanel>
+        </div>
+
+        <div class="row">
+            <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

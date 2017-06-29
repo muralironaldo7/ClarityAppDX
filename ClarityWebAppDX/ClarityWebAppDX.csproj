@@ -71,8 +71,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Icons\Dashboard.png" />
+    <Content Include="Images\Icons\Edit.png" />
+    <Content Include="Images\Icons\New.png" />
+    <Content Include="Images\Icons\Profile.png" />
+    <Content Include="Images\Icons\Report.png" />
     <Content Include="packages.config" />
     <Content Include="LayoutMaster.Master" />
+    <Content Include="ContentMaster.Master" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="NewQuestionnaire.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,10 +96,19 @@
     <Content Include="Helpers\jquery.min.js" />
     <Content Include="Helpers\SiteStyle.css" />
     <Content Include="Images\logo.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentMaster.Master.cs">
+      <DependentUpon>ContentMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContentMaster.Master.designer.cs">
+      <DependentUpon>ContentMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -109,6 +126,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewQuestionnaire.aspx.cs">
+      <DependentUpon>NewQuestionnaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewQuestionnaire.aspx.designer.cs">
+      <DependentUpon>NewQuestionnaire.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
