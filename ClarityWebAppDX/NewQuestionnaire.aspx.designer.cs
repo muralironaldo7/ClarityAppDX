@@ -38,5 +38,23 @@ namespace ClarityWebAppDX {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtRiskThreshold;
+        
+        /// <summary>
+        /// cmdAddThreshold control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton cmdAddThreshold;
+        
+        /// <summary>
+        /// lblQuestionnaireName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel lblQuestionnaireName;
     }
 }
