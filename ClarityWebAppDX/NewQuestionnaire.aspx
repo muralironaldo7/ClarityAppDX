@@ -29,32 +29,94 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-6">
-                        <dx:ASPxComboBox ID="cmdRiskType" runat="server" Caption="Risk Type" Width="100%"></dx:ASPxComboBox>
+                        <dx:ASPxComboBox ID="cmbRiskType" runat="server" ClientInstanceName="cmbRiskType" Caption="Risk Type" Width="100%" DataSourceID="ConfigDataSource" OnDataBinding="cmbRiskType_DataBinding" TextField="ConfigurationName" ValueField="TypeID" >
+                            <ValidationSettings ValidationGroup = "Threshold" ErrorTextPosition="Bottom">
+                                <RequiredField IsRequired="true" ErrorText="Select Configuration"/>
+                            </ValidationSettings>
+                            <ClearButton DisplayMode="OnHover" ></ClearButton>
+                        </dx:ASPxComboBox>
+                        <asp:SqlDataSource ID="ConfigDataSource" runat="server"></asp:SqlDataSource>
                     </div>
-                    <div class="col-xs-5">
-                        <dx:ASPxTextBox ID="txtRiskThreshold" runat="server" Width="100%" Caption="Risk Thresold Value">
-                            <ValidationSettings ValidationGroup="Threshold">
+                    <div class="col-xs-6">
+                        <dx:ASPxTextBox ID="txtRiskThreshold" runat="server" Width="100%" Caption="Risk Thresold Value" ClientInstanceName ="txtRiskThreshold">
+                            <ValidationSettings ValidationGroup="Threshold" ErrorTextPosition="Bottom">
+                                <RequiredField IsRequired ="true" ErrorText="Enter value"/>
                             </ValidationSettings>
                         </dx:ASPxTextBox>
                     </div>
-                    <div class="col-xs-1">
-                        <dx:ASPxButton ID="cmdAddThreshold" runat="server" ClientInstanceName="cmdAdd" EnableClientSideAPI="True" RenderMode="Link" ValidationGroup="Threshold" ToolTip="Add Threshold">
-                            <Image Height="30px" Url="~/Images/Icons/add.png">
-                            </Image>
-                        </dx:ASPxButton>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <dx:ASPxCallbackPanel ID="ConfigurationCallback" runat="server" Width="100%" ClientInstanceName ="ConfigurationCallback" EnableCallbackAnimation="true" EnableViewState="true">
+                            <PanelCollection>
+                                <dx:PanelContent ID="ConfigurationButtonPanel" runat="server">
+                                    <dx:ASPxButton ID="cmdAddThreshold" runat="server" ClientInstanceName="cmdAdd" EnableClientSideAPI="True"  Text="Add Configuration" ToolTip="Add Threshold" AutoPostBack="False" Width="100%">
+                                        <ClientSideEvents Click="function(s, e) {
+                                                                        e.processOnServer = false;
+	                                                                    if(ASPxClientEdit.ValidateGroup('Threshold'))
+                                                                        {
+                                                                            ConfigGridView.PerformCallback();  
+                                                                        }
+                                                                    }" />
+                                    </dx:ASPxButton>
+                                </dx:PanelContent>
+                            </PanelCollection>
+                        </dx:ASPxCallbackPanel>
+                        
                     </div>
                 </div>
+                <br />
             </div>
         </div>
 
         <div class="col-sm-5">
-            <div class="col-xs-12 card paddedCard">
+            <div id="" class="col-xs-12 card paddedCard cardShadow"><!--QuestionnaireDetails-->
+                <br />
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <dx:ASPxLabel ID="lblQuestionnaireName" ClientIDMode="Static" ClientInstanceName="lblQuestionnaireName" runat="server" Text=""></dx:ASPxLabel>
+                        <dx:ASPxLabel ID="lblQuestionnaireName" ClientIDMode="Static" ClientInstanceName="lblQuestionnaireName" runat="server" Text="" CssClass="HeadingText"></dx:ASPxLabel>
                     </div>
                 </div>
+                <div class="row">
+                    <hr class="divider"/> 
+                </div>
                 
+                <div class="row">
+                    <dx:ASPxGridView ID="gvConfig" runat="server" AutoGenerateColumns="False" Width="100%" ClientInstanceName="ConfigGridView" OnDataBinding="gvConfig_DataBinding" KeyFieldName="ConfigName" OnCustomCallback="gvConfig_CustomCallback"
+                        OnRowDeleting="gvConfig_RowDeleting" OnRowDeleted="gvConfig_RowDeleted" EnableCallbackAnimation="True">
+                        <ClientSideEvents EndCallback="gvConfigEndCallback" />
+                        <SettingsDataSecurity AllowEdit="False" AllowInsert="False" />
+                        <Columns>
+                            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                            </dx:GridViewCommandColumn>
+                            <dx:GridViewDataTextColumn Caption="Configuration Type" VisibleIndex="1" Width="70%" FieldName="ConfigName">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Value" VisibleIndex="2" FieldName="ConfigValue">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="TypeID" VisibleIndex="3" FieldName="TypeID" Visible="false">
+                            </dx:GridViewDataTextColumn>
+                        </Columns>
+                    </dx:ASPxGridView>    
+                </div>
+                
+                <div class="row">
+                    <hr class="divider"/> 
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <dx:ASPxButton ID="cmdSave" runat="server" Text="Save Questionnaire" Width="100%" ValidationGroup="QuestionGeneric" OnClick="cmdSave_Click"></dx:ASPxButton>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <br /><dx:ASPxLabel ID="lblErr" runat="server" Text="" Font-Italic="true" Font-Size="Medium" ForeColor="#a94442" Visible="false">
+                        </dx:ASPxLabel>
+                    </div>
+                </div>
+
+                <br />
             </div>
         </div>
 

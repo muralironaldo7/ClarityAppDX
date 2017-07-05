@@ -290,6 +290,10 @@ namespace Clarity.DataAccess
             }
         }
 
+        public string GetConnectionString()
+        {
+            return this.ConnectionString;
+        }
 
         public void AddParameter(string ParamName, object ParamValue)
         {
@@ -316,7 +320,7 @@ namespace Clarity.DataAccess
 
         void writeLogToFile(string Modulename, string msg)
         {
-            string dPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            string dPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Exceptions");
             string dMsg = "[" + DateTime.Now.ToString() + "] - " + Modulename + " | " + msg;
             string filename = dPath + DateTime.Now.Date.ToString("yyyyMMdd") + ".txt";
             StreamWriter oStream = new StreamWriter(filename, true);

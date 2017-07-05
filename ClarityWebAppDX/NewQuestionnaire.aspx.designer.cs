@@ -22,13 +22,22 @@ namespace ClarityWebAppDX {
         protected global::DevExpress.Web.ASPxTextBox txtQuestionnaireName;
         
         /// <summary>
-        /// cmdRiskType control.
+        /// cmbRiskType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cmdRiskType;
+        protected global::DevExpress.Web.ASPxComboBox cmbRiskType;
+        
+        /// <summary>
+        /// ConfigDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ConfigDataSource;
         
         /// <summary>
         /// txtRiskThreshold control.
@@ -38,6 +47,24 @@ namespace ClarityWebAppDX {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtRiskThreshold;
+        
+        /// <summary>
+        /// ConfigurationCallback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel ConfigurationCallback;
+        
+        /// <summary>
+        /// ConfigurationButtonPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PanelContent ConfigurationButtonPanel;
         
         /// <summary>
         /// cmdAddThreshold control.
@@ -56,5 +83,32 @@ namespace ClarityWebAppDX {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel lblQuestionnaireName;
+        
+        /// <summary>
+        /// gvConfig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvConfig;
+        
+        /// <summary>
+        /// cmdSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton cmdSave;
+        
+        /// <summary>
+        /// lblErr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel lblErr;
     }
 }

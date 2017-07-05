@@ -75,7 +75,7 @@
                                         <dx:NavBarItem Text="New Questionnaire" Name="NewQuestionnaire">
                                             <Image Height="40px" Url="Images/Icons/New.png"></Image>
                                         </dx:NavBarItem>
-                                        <dx:NavBarItem Text="Edit Questionnaire">
+                                        <dx:NavBarItem Text="Edit Questionnaire" Name="EditQuestionnaire">
                                             <Image Height="40px" Url="Images/Icons/Edit.png"></Image>
                                         </dx:NavBarItem>
                                     </Items>

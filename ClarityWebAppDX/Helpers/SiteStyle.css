@@ -125,3 +125,18 @@ body, html {
 .paddedCard{
     margin:10px;
 }
+
+.HeadingText{
+    font-size:24px;
+    font-weight:500;
+    margin-top:20px;
+}
+
+#QuestionnaireDetails{
+    display:none;
+}
+
+.has-error{
+    font-size:12px;
+    font-style:italic;
+}

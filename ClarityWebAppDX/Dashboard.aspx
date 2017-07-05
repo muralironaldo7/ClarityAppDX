@@ -3,9 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
     <div class="row">
-       <div class="col-xs-12">
-           <h1>Clarity Administration</h1>
-       </div>
+        <div class="col-xs-12 toolbar-row">
+            <span class="toolbar-title">Clarity Administration</span>
+        </div>
     </div>
+
+    
 
 </asp:Content>

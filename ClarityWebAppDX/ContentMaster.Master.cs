@@ -22,6 +22,10 @@ namespace ClarityWebAppDX
                     Response.Redirect("NewQuestionnaire.aspx", true);
                     break;
 
+                case "editquestionnaire":
+                    Response.Redirect("EditQuestionnaire.aspx", true);
+                    break;
+
                 case "dashboard":
                     Response.Redirect("Dashboard.aspx", true);
                     break;

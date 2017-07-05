@@ -84,6 +84,7 @@
     <Content Include="ContentMaster.Master" />
     <Content Include="Dashboard.aspx" />
     <Content Include="NewQuestionnaire.aspx" />
+    <Content Include="EditQuestionnaire.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -144,12 +145,30 @@
     <Compile Include="NewQuestionnaire.aspx.designer.cs">
       <DependentUpon>NewQuestionnaire.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditQuestionnaire.aspx.cs">
+      <DependentUpon>EditQuestionnaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditQuestionnaire.aspx.designer.cs">
+      <DependentUpon>EditQuestionnaire.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clarity.CryptoProvider\Clarity.CryptoProvider.csproj">
+      <Project>{8ad93947-0f0c-45ec-b01c-731d44b070d1}</Project>
+      <Name>Clarity.CryptoProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clarity.DataAccess\Clarity.DataAccess.csproj">
+      <Project>{ca6b5501-11c6-48f7-97e4-f16a1c3ee17b}</Project>
+      <Name>Clarity.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
