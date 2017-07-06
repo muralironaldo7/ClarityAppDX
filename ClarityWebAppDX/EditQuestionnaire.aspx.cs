@@ -8,6 +8,7 @@ using Clarity.CryptoProvider;
 using Clarity.DataAccess;
 using System.Configuration;
 using System.Data;
+using DevExpress.Web;
 
 namespace ClarityWebAppDX
 {
@@ -21,15 +22,17 @@ namespace ClarityWebAppDX
             {
                 if(!IsPostBack && !IsCallback)
                 {
+                    int QuestionnaireID = 0;
                     securityAgent = new CryptoProvider();
                     if(Request.QueryString.Count > 0 )
                     {
-                        //int QuestionnaireID = int.Parse(securityAgent.decryptText(Request.QueryString["QID"]).Replace(' ', '+'));
-                        int QuestionnaireID = int.Parse(Request.QueryString["QID"]);
+                        QuestionnaireID = int.Parse(securityAgent.decryptText(Request.QueryString["QID"].Replace(' ', '+')));
+                        //QuestionnaireID = int.Parse(Request.QueryString["QID"]);
                         ViewState["CurrentQuestionnaire"] = QuestionnaireID;
                         
                     }
                     LoadQuestionList();
+                    ConfigGridView.DataBind();
                 }
             }
             catch(Exception ex)
@@ -40,32 +43,73 @@ namespace ClarityWebAppDX
 
         private void LoadQuestionList()
         {
-            DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
-            string data = DBAgent.ExecuteStoredProcedure("dbo.spGetLists");
-            DataSet ds = CommonHelpers.GetDataSetFromXml(data);
-            if(ds.Tables.Count > 0 )
+            try
             {
-                cmbQuestionnaireList.DataSource = ds.Tables[0];
-                cmbQuestionnaireList.TextField = "QuestionnaireName";
-                cmbQuestionnaireList.ValueField = "QuestionnaireID";
-                cmbQuestionnaireList.DataBind();
-            }
+                DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+                string data = DBAgent.ExecuteStoredProcedure("dbo.spGetLists");
+                DataSet ds = CommonHelpers.GetDataSetFromXml(data);
+                if (ds.Tables.Count > 0)
+                {
+                    cmbQuestionnaireList.DataSource = ds.Tables[0];
+                    cmbQuestionnaireList.TextField = "QuestionnaireName";
+                    cmbQuestionnaireList.ValueField = "QuestionnaireID";
+                    cmbQuestionnaireList.DataBind();
+                }
 
-            if (ds.Tables.Count > 1)
+                if (ds.Tables.Count > 1)
+                {
+
+                }
+
+                if (ds.Tables.Count > 2)
+                {
+
+                }
+            }
+            catch(Exception ex)
             {
-
+                CommonHelpers.writeLogToFile("LoadQuestionList: EditQuestionnaire.aspx", ex.Message);
             }
-
-            if (ds.Tables.Count > 2)
-            {
-
-            }
-
         }
 
         protected void cmbQuestionnaireList_DataBound(object sender, EventArgs e)
         {
             cmbQuestionnaireList.Value = ViewState["CurrentQuestionnaire"];
+        }
+
+        protected void ConfigGridView_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
+        {
+            ASPxGridView grid = (ASPxGridView)sender;
+            grid.Columns["ConfigEditColumn"].Visible = true;
+        }
+
+        protected void ConfigGridView_DataBinding(object sender, EventArgs e)
+        {
+            try
+            {
+                DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+                DBAgent.AddParameter("@ParamQuestionnaireID", ViewState["CurrentQuestionnaire"]);
+                string data = DBAgent.ExecuteStoredProcedure("dbo.spGetQuestionnaireConfig");
+                DataSet ds = CommonHelpers.GetDataSetFromXml(data);
+                if (ds.Tables.Count > 0)
+                {
+                    ConfigGridView.DataSource = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonHelpers.writeLogToFile("ConfigGridView_DataBinding: EditQuestionnaire.aspx", ex.Message);
+            }
+        }
+
+        protected void ConfigGridView_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
+        {
+
+        }
+
+        protected void ConfigGridView_RowUpdated(object sender, DevExpress.Web.Data.ASPxDataUpdatedEventArgs e)
+        {
+
         }
     }
 }

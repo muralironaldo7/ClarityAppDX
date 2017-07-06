@@ -22,12 +22,30 @@ namespace ClarityWebAppDX {
         protected global::DevExpress.Web.ASPxComboBox cmbQuestionnaireList;
         
         /// <summary>
-        /// vgConfigList control.
+        /// cmdEditQuestionnaireName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxVerticalGrid vgConfigList;
+        protected global::DevExpress.Web.ASPxButton cmdEditQuestionnaireName;
+        
+        /// <summary>
+        /// cmdEditConfiguration control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton cmdEditConfiguration;
+        
+        /// <summary>
+        /// ConfigGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView ConfigGridView;
     }
 }

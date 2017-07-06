@@ -51,13 +51,7 @@
                             <PanelCollection>
                                 <dx:PanelContent ID="ConfigurationButtonPanel" runat="server">
                                     <dx:ASPxButton ID="cmdAddThreshold" runat="server" ClientInstanceName="cmdAdd" EnableClientSideAPI="True"  Text="Add Configuration" ToolTip="Add Threshold" AutoPostBack="False" Width="100%">
-                                        <ClientSideEvents Click="function(s, e) {
-                                                                        e.processOnServer = false;
-	                                                                    if(ASPxClientEdit.ValidateGroup('Threshold'))
-                                                                        {
-                                                                            ConfigGridView.PerformCallback();  
-                                                                        }
-                                                                    }" />
+                                        <ClientSideEvents Click="OncmdAddThresholdClick" />
                                     </dx:ASPxButton>
                                 </dx:PanelContent>
                             </PanelCollection>
