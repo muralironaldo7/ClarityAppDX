@@ -23,10 +23,10 @@
                     <br />
                     <div class="row">
                          <div class="col-xs-10 text-center">
-                             <dx:ASPxTextBox ID="txtQuestionnaireName" runat="server" Width="100%" Caption="Questionnaire Name" ClientInstanceName="txtQuestionnaireName" Enabled="False" ClientIDMode="Static"></dx:ASPxTextBox>
+                             <dx:ASPxTextBox ID="txtQuestionnaireName" runat="server" Width="100%" Caption="Questionnaire Name" ClientInstanceName="txtQuestionnaireName" Enabled="False" ClientIDMode="Static" Visible="false"></dx:ASPxTextBox>
                         </div>
                         <div class="col-xs-2 text-center">
-                            <dx:ASPxButton ID="cmdEditQuestionnaireName" runat="server" Text="Edit Name" RenderMode="Link" AutoPostBack="false" ClientInstanceName="cmdEditQuestionnaireName">
+                            <dx:ASPxButton ID="cmdEditQuestionnaireName" runat="server" Text="Edit Name" RenderMode="Link" AutoPostBack="false" ClientInstanceName="cmdEditQuestionnaireName" Visible="false">
                                 <ClientSideEvents Click="OncmdEditQuestionnaireNameClick" />
                             </dx:ASPxButton>
                         </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6">
                     <dx:ASPxGridView ID="ConfigGridView" runat="server" ClientInstanceName="ConfigGridView" AutoGenerateColumns="False" KeyFieldName="ConfigID" Width="100%" CssClass="text-center"
-                        OnCustomCallback="ConfigGridView_CustomCallback" OnDataBinding="ConfigGridView_DataBinding" OnRowUpdating="ConfigGridView_RowUpdating" OnRowUpdated="ConfigGridView_RowUpdated">
+                        OnCustomCallback="ConfigGridView_CustomCallback" OnDataBinding="ConfigGridView_DataBinding" OnRowUpdating="ConfigGridView_RowUpdating" >
                         <SettingsPager Visible="False">
                         </SettingsPager>
                         <SettingsDataSecurity AllowDelete="False" AllowInsert="False" />
@@ -57,26 +57,64 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-            <div class="card paddedCard cardShadow">
-                <h3>Add Question/Answer</h3>
-                <hr class="divider"/>
-                <div style="width:100%;">
-                    
+        <div class="col-xs-12">
+            <div class="col-md-6">
+                <div class="card cardShadow col-xs-12 nomargin">
+                    <h3>Add Question</h3>
+                    <hr class="divider"/>
+                    <dx:ASPxMemo ID="txtQuestion" runat="server" Height="80px" Width="100%" ClientInstanceName="txtQuestion" Caption="Question Text">
+                        <CaptionSettings Position="Top"  />
+                        <ValidationSettings ErrorTextPosition="Bottom">
+                            <RequiredField IsRequired="true" ErrorText="Please enter the question" />
+                        </ValidationSettings>
+                    </dx:ASPxMemo>
+                    <h4>Select Answers</h4>
+
+                    <dx:ASPxGridView ID="AnswerListGridView" runat="server" Width="100%" AutoGenerateColumns="False" OnDataBinding="AnswerListGridView_DataBinding" KeyFieldName="AnswerID" OnRowInserting="AnswerListGridView_RowInserting">
+                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" />
+                        <SettingsSearchPanel Visible="True" />
+                        <Columns>
+                            <dx:GridViewCommandColumn SelectAllCheckboxMode="None" ShowSelectCheckbox="True" VisibleIndex="0" Width="35px" ShowNewButtonInHeader="True">
+                            </dx:GridViewCommandColumn>
+                            <dx:GridViewDataTextColumn Caption="AnswerID" FieldName="AnswerID" Visible="False" VisibleIndex="1">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Answer Text" FieldName="AnswerText" VisibleIndex="2">
+                            </dx:GridViewDataTextColumn>
+                        </Columns>
+                    </dx:ASPxGridView>
+
+                    <br />
+
+                    <dx:ASPxListBox ID="lbSelectedAnswers" runat="server" ValueType="System.String" ValueField="AnswerID" TextField="AnswerText" Width="100%"></dx:ASPxListBox>
+                    <br />
+                    <dx:ASPxButton ID="cmdSaveQuestion" runat="server" Text="Save Question" Width="100%"></dx:ASPxButton>
+                    <br />
+                    <br />
                 </div>
+                
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card paddedCard cardShadow">
-                <h3>Questionnaire Questions</h3>
-                <hr class="divider"/>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <dx:ASPxTextBox ID="ASPxTextBox2" runat="server" Width="100%" Caption="Questionnaire Name" ClientInstanceName="txtQuestionnaireName" Enabled="False" ClientIDMode="Static"></dx:ASPxTextBox>
-                    </div>
+            <div class="col-md-6">
+                <div class="card cardShadow col-xs-12 nomargin">
+                    <h3>Current Questions</h3>
+                    <hr class="divider"/>
+                    <dx:ASPxGridView ID="QuestionsGridView" runat="server" Width="100%" AutoGenerateColumns="False">
+                        <SettingsPager PageSize="5">
+                        </SettingsPager>
+                        <SettingsBehavior AllowGroup="False" AllowSort="False" />
+                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                        <Columns>
+                            <dx:GridViewDataTextColumn Caption="QAID" FieldName="QAID" Visible="False" VisibleIndex="0">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Question Text" FieldName="QuestionText" VisibleIndex="1" Width="100%">
+                            </dx:GridViewDataTextColumn>
+                        </Columns>
+
+                    </dx:ASPxGridView>
                 </div>
             </div>
         </div>
     </div>
 
+    <br />
+    <br />
 </asp:Content>

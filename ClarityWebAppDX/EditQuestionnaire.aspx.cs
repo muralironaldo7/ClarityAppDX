@@ -31,8 +31,10 @@ namespace ClarityWebAppDX
                         ViewState["CurrentQuestionnaire"] = QuestionnaireID;
                         
                     }
-                    LoadQuestionList();
+                    LoadQuestionnaireList();
+                    AnswerListGridView.DataBind();
                     ConfigGridView.DataBind();
+                    AnswerListGridView.ForceDataRowType(typeof(AnswerListClass));
                 }
             }
             catch(Exception ex)
@@ -41,12 +43,12 @@ namespace ClarityWebAppDX
             }
         }
 
-        private void LoadQuestionList()
+        private void LoadQuestionnaireList()
         {
             try
             {
                 DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
-                string data = DBAgent.ExecuteStoredProcedure("dbo.spGetLists");
+                string data = DBAgent.ExecuteStoredProcedure("dbo.spGetQuestionnaierList");
                 DataSet ds = CommonHelpers.GetDataSetFromXml(data);
                 if (ds.Tables.Count > 0)
                 {
@@ -54,16 +56,6 @@ namespace ClarityWebAppDX
                     cmbQuestionnaireList.TextField = "QuestionnaireName";
                     cmbQuestionnaireList.ValueField = "QuestionnaireID";
                     cmbQuestionnaireList.DataBind();
-                }
-
-                if (ds.Tables.Count > 1)
-                {
-
-                }
-
-                if (ds.Tables.Count > 2)
-                {
-
                 }
             }
             catch(Exception ex)
@@ -106,17 +98,39 @@ namespace ClarityWebAppDX
 
         protected void ConfigGridView_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
         {
-
-        }
-
-        protected void ConfigGridView_RowUpdated(object sender, DevExpress.Web.Data.ASPxDataUpdatedEventArgs e)
-        {
-
+            e.Cancel = true;
+            ConfigGridView.CancelEdit();
         }
 
         protected void cmbQuestionnaireList_Callback(object sender, CallbackEventArgsBase e)
         {
 
         }
+
+        protected void AnswerListGridView_DataBinding(object sender, EventArgs e)
+        {
+            DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+            string data = DBAgent.ExecuteStoredProcedure("dbo.spGetAllAnswers");
+            DataSet ds = CommonHelpers.GetDataSetFromXml(data);
+            if (ds.Tables.Count > 0)
+            {
+                AnswerListGridView.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                AnswerListGridView.ForceDataRowType(typeof(AnswerListClass));
+            }
+        }
+
+        protected void AnswerListGridView_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
+        {
+            e.Cancel = true;
+        }
+    }
+
+    public class AnswerListClass
+    {
+        public int AnswerID { get; set; }
+        public string AnswerText { get; set; }
     }
 }

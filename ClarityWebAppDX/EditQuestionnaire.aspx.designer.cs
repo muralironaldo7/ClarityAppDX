@@ -49,12 +49,48 @@ namespace ClarityWebAppDX {
         protected global::DevExpress.Web.ASPxGridView ConfigGridView;
         
         /// <summary>
-        /// ASPxTextBox2 control.
+        /// txtQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxTextBox2;
+        protected global::DevExpress.Web.ASPxMemo txtQuestion;
+        
+        /// <summary>
+        /// AnswerListGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView AnswerListGridView;
+        
+        /// <summary>
+        /// lbSelectedAnswers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxListBox lbSelectedAnswers;
+        
+        /// <summary>
+        /// cmdSaveQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton cmdSaveQuestion;
+        
+        /// <summary>
+        /// QuestionsGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView QuestionsGridView;
     }
 }
