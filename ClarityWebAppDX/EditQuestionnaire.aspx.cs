@@ -26,8 +26,8 @@ namespace ClarityWebAppDX
                     securityAgent = new CryptoProvider();
                     if(Request.QueryString.Count > 0 )
                     {
-                        QuestionnaireID = int.Parse(securityAgent.decryptText(Request.QueryString["QID"].Replace(' ', '+')));
-                        //QuestionnaireID = int.Parse(Request.QueryString["QID"]);
+                        //QuestionnaireID = int.Parse(securityAgent.decryptText(Request.QueryString["QID"].Replace(' ', '+')));
+                        QuestionnaireID = int.Parse(Request.QueryString["QID"]);
                         ViewState["CurrentQuestionnaire"] = QuestionnaireID;
                         
                     }
@@ -79,8 +79,9 @@ namespace ClarityWebAppDX
 
         protected void ConfigGridView_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
         {
-            ASPxGridView grid = (ASPxGridView)sender;
-            grid.Columns["ConfigEditColumn"].Visible = true;
+            ListEditItem listItem = cmbQuestionnaireList.SelectedItem;
+            txtQuestionnaireName.Text = listItem.Text;
+            ConfigGridView.DataBind();
         }
 
         protected void ConfigGridView_DataBinding(object sender, EventArgs e)
@@ -88,7 +89,8 @@ namespace ClarityWebAppDX
             try
             {
                 DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
-                DBAgent.AddParameter("@ParamQuestionnaireID", ViewState["CurrentQuestionnaire"]);
+                ListEditItem listItem = cmbQuestionnaireList.SelectedItem;
+                DBAgent.AddParameter("@ParamQuestionnaireID", listItem.Value);
                 string data = DBAgent.ExecuteStoredProcedure("dbo.spGetQuestionnaireConfig");
                 DataSet ds = CommonHelpers.GetDataSetFromXml(data);
                 if (ds.Tables.Count > 0)
@@ -108,6 +110,11 @@ namespace ClarityWebAppDX
         }
 
         protected void ConfigGridView_RowUpdated(object sender, DevExpress.Web.Data.ASPxDataUpdatedEventArgs e)
+        {
+
+        }
+
+        protected void cmbQuestionnaireList_Callback(object sender, CallbackEventArgsBase e)
         {
 
         }
