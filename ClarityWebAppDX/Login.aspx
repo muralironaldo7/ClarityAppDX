@@ -52,7 +52,7 @@
 
                 <div class="row FormRow">
                     <div class="col-xs-12">
-                        
+                        <dx:ASPxButton ID="cmdRedirect" runat="server" Text="Dashboard" Width="100%" OnClick="cmdRedirect_Click" CausesValidation="false"></dx:ASPxButton>
                     </div>
                 </div>
 

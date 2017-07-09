@@ -77,15 +77,20 @@
     <Content Include="Images\Icons\add.png" />
     <Content Include="Images\Icons\Dashboard.png" />
     <Content Include="Images\Icons\Edit.png" />
+    <Content Include="Images\Icons\Management.png" />
     <Content Include="Images\Icons\New.png" />
     <Content Include="Images\Icons\Profile.png" />
     <Content Include="Images\Icons\Report.png" />
+    <Content Include="Images\Icons\View.png" />
     <Content Include="packages.config" />
     <Content Include="LayoutMaster.Master" />
     <Content Include="ContentMaster.Master" />
     <Content Include="Dashboard.aspx" />
     <Content Include="NewQuestionnaire.aspx" />
     <Content Include="EditQuestionnaire.aspx" />
+    <Content Include="ViewQuestionnaire.aspx" />
+    <Content Include="UserManagement.aspx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -152,6 +157,20 @@
     </Compile>
     <Compile Include="EditQuestionnaire.aspx.designer.cs">
       <DependentUpon>EditQuestionnaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewQuestionnaire.aspx.cs">
+      <DependentUpon>ViewQuestionnaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewQuestionnaire.aspx.designer.cs">
+      <DependentUpon>ViewQuestionnaire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

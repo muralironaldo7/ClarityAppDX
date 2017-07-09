@@ -38,5 +38,14 @@ namespace ClarityWebAppDX {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton cmdLogin;
+        
+        /// <summary>
+        /// cmdRedirect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton cmdRedirect;
     }
 }

@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace ClarityWebAppDX
 {
-    public partial class LoginPage : System.Web.UI.Page
+    public partial class UserManagement : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        protected void cmdRedirect_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Dashboard.aspx");
         }
     }
 }

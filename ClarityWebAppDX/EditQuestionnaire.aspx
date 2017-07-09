@@ -17,8 +17,8 @@
                 <h3>Questionnaire Details</h3>
                 <hr class="divider"/>
                 <div class="col-md-6">
-                    <dx:ASPxComboBox ID="cmbQuestionnaireList" runat="server" Caption="Selected Questionnaire" Width="100%" OnDataBound="cmbQuestionnaireList_DataBound" ValueType="System.Int32">
-                        <ClientSideEvents SelectedIndexChanged="OncmbQuestionnaireListChanged"/>
+                    <dx:ASPxComboBox ID="cmbQuestionnaireList" runat="server" Caption="Selected Questionnaire" Width="100%" OnDataBound="cmbQuestionnaireList_DataBound" ValueType="System.Int32" AutoPostBack="true" OnSelectedIndexChanged="cmbQuestionnaireList_SelectedIndexChanged">
+                        
                     </dx:ASPxComboBox>
                     <br />
                     <div class="row">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6">
                     <dx:ASPxGridView ID="ConfigGridView" runat="server" ClientInstanceName="ConfigGridView" AutoGenerateColumns="False" KeyFieldName="ConfigID" Width="100%" CssClass="text-center"
-                        OnCustomCallback="ConfigGridView_CustomCallback" OnDataBinding="ConfigGridView_DataBinding" OnRowUpdating="ConfigGridView_RowUpdating" >
+                        OnCustomCallback="ConfigGridView_CustomCallback" OnDataBinding="ConfigGridView_DataBinding" OnRowUpdating="ConfigGridView_RowUpdating">
                         <SettingsPager Visible="False">
                         </SettingsPager>
                         <SettingsDataSecurity AllowDelete="False" AllowInsert="False" />
@@ -70,9 +70,11 @@
                     </dx:ASPxMemo>
                     <h4>Select Answers</h4>
 
-                    <dx:ASPxGridView ID="AnswerListGridView" runat="server" Width="100%" AutoGenerateColumns="False" OnDataBinding="AnswerListGridView_DataBinding" KeyFieldName="AnswerID" OnRowInserting="AnswerListGridView_RowInserting">
+                    <dx:ASPxGridView ID="AnswerListGridView" ClientInstanceName="AnswerListGridView" runat="server" Width="100%" AutoGenerateColumns="False" OnDataBinding="AnswerListGridView_DataBinding" KeyFieldName="AnswerID" 
+                        OnRowInserting="AnswerListGridView_RowInserting" OnRowInserted="AnswerListGridView_RowInserted">
                         <SettingsDataSecurity AllowDelete="False" AllowEdit="False" />
                         <SettingsSearchPanel Visible="True" />
+                        <ClientSideEvents SelectionChanged="OnAnswerListGridViewSelectionChanged" />
                         <Columns>
                             <dx:GridViewCommandColumn SelectAllCheckboxMode="None" ShowSelectCheckbox="True" VisibleIndex="0" Width="35px" ShowNewButtonInHeader="True">
                             </dx:GridViewCommandColumn>
@@ -85,9 +87,9 @@
 
                     <br />
 
-                    <dx:ASPxListBox ID="lbSelectedAnswers" runat="server" ValueType="System.String" ValueField="AnswerID" TextField="AnswerText" Width="100%"></dx:ASPxListBox>
+                    <dx:ASPxListBox ID="lbSelectedAnswers" ClientInstanceName="lbSelectedAnswers" runat="server" ValueType="System.String" ValueField="AnswerID" TextField="AnswerText" Width="100%" Height="175px"></dx:ASPxListBox>
                     <br />
-                    <dx:ASPxButton ID="cmdSaveQuestion" runat="server" Text="Save Question" Width="100%"></dx:ASPxButton>
+                    <dx:ASPxButton ID="cmdSaveQuestion" runat="server" Text="Save Question" Width="100%" OnClick="cmdSaveQuestion_Click"></dx:ASPxButton>
                     <br />
                     <br />
                 </div>
@@ -97,19 +99,20 @@
                 <div class="card cardShadow col-xs-12 nomargin">
                     <h3>Current Questions</h3>
                     <hr class="divider"/>
-                    <dx:ASPxGridView ID="QuestionsGridView" runat="server" Width="100%" AutoGenerateColumns="False">
-                        <SettingsPager PageSize="5">
+                    <dx:ASPxGridView ID="QuestionsGridView" runat="server" Width="100%" AutoGenerateColumns="False" OnDataBinding ="QuestionsGridView_DataBinding">
+                        <Settings ShowColumnHeaders="false" />
+                        <SettingsPager PageSize="15">
                         </SettingsPager>
                         <SettingsBehavior AllowGroup="False" AllowSort="False" />
                         <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
                         <Columns>
-                            <dx:GridViewDataTextColumn Caption="QAID" FieldName="QAID" Visible="False" VisibleIndex="0">
+                            <dx:GridViewDataTextColumn Caption="QAID" FieldName="QID" Visible="False" VisibleIndex="0">
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataTextColumn Caption="Question Text" FieldName="QuestionText" VisibleIndex="1" Width="100%">
                             </dx:GridViewDataTextColumn>
                         </Columns>
-
                     </dx:ASPxGridView>
+                    <br /><br />
                 </div>
             </div>
         </div>

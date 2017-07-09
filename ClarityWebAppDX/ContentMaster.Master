@@ -78,6 +78,9 @@
                                         <dx:NavBarItem Text="Edit Questionnaire" Name="EditQuestionnaire">
                                             <Image Height="40px" Url="Images/Icons/Edit.png"></Image>
                                         </dx:NavBarItem>
+                                        <dx:NavBarItem Text="View Questionnaire" Name="ViewQuestionnaire">
+                                            <Image Height="40px" Url="Images/Icons/View.png"></Image>
+                                        </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>
                                 <dx:NavBarGroup Text="Reports">
@@ -87,6 +90,14 @@
                                         </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>
+                                <dx:NavBarGroup Text="User Management">
+                                    <Items>
+                                        <dx:NavBarItem Text="Add New User">
+                                            <Image Height="40px" Url="Images/Icons/Management.png"></Image>
+                                        </dx:NavBarItem>
+                                    </Items>
+                                </dx:NavBarGroup>
+
                             </Groups>
                         </dx:ASPxNavBar>
                     </dx:PanelContent>
