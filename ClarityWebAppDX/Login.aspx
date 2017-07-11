@@ -46,7 +46,7 @@
 
                 <div class="row FormRow">
                     <div class="col-xs-12">
-                        <dx:ASPxButton ID="cmdLogin" runat="server" Text="Login" Width="100%"></dx:ASPxButton>
+                        <dx:ASPxButton ID="cmdLogin" runat="server" Text="Login" Width="100%" OnClick="cmdLogin_Click"></dx:ASPxButton>
                     </div>
                 </div>
 

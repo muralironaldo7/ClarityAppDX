@@ -7,7 +7,7 @@
             <span class="toolbar-title">Clarity Administration</span>
         </div>
     </div>
-
+    <br />
     
 
 </asp:Content>

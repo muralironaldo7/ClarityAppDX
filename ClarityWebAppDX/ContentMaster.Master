@@ -92,7 +92,7 @@
                                 </dx:NavBarGroup>
                                 <dx:NavBarGroup Text="User Management">
                                     <Items>
-                                        <dx:NavBarItem Text="Add New User">
+                                        <dx:NavBarItem Text="Add New User" Name="UserManagement">
                                             <Image Height="40px" Url="Images/Icons/Management.png"></Image>
                                         </dx:NavBarItem>
                                     </Items>

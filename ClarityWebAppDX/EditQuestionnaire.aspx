@@ -10,7 +10,7 @@
             <span class="toolbar-title">Edit Questionnaire</span>
         </div>
     </div>
-
+    <br />
     <div class="row">
         <div class="col-xs-12">
             <div class="card paddedCard cardShadow">
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-
+    <br />
     <div class="row">
         <div class="col-xs-12">
             <div class="col-md-6">

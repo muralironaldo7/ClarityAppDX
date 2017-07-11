@@ -31,6 +31,9 @@ namespace ClarityWebAppDX
                 case "dashboard":
                     Response.Redirect("Dashboard.aspx", true);
                     break;
+                case "usermanagement":
+                    Response.Redirect("UserManagement.aspx", true);
+                    break;
             }
         }
     }
