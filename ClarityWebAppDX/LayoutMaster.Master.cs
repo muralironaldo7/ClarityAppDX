@@ -11,7 +11,13 @@ namespace ClarityWebAppDX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                if(Session["LoginID"] != null)
+                {
+                    Response.Redirect("Dashboard.aspx");
+                }
+            }
         }
     }
 }

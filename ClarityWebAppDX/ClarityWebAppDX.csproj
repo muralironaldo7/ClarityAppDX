@@ -76,11 +76,14 @@
     <Content Include="Helpers\NewQuestionnaire.js" />
     <Content Include="Images\Icons\add.png" />
     <Content Include="Images\Icons\Dashboard.png" />
+    <Content Include="Images\Icons\Delete.png" />
     <Content Include="Images\Icons\Edit.png" />
     <Content Include="Images\Icons\Management.png" />
     <Content Include="Images\Icons\New.png" />
+    <Content Include="Images\Icons\NewUser.png" />
     <Content Include="Images\Icons\Profile.png" />
     <Content Include="Images\Icons\Report.png" />
+    <Content Include="Images\Icons\Reset.png" />
     <Content Include="Images\Icons\View.png" />
     <Content Include="packages.config" />
     <Content Include="LayoutMaster.Master" />
@@ -90,6 +93,8 @@
     <Content Include="EditQuestionnaire.aspx" />
     <Content Include="ViewQuestionnaire.aspx" />
     <Content Include="UserManagement.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="ResetPassword.aspx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -171,6 +176,20 @@
     </Compile>
     <Compile Include="UserManagement.aspx.designer.cs">
       <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

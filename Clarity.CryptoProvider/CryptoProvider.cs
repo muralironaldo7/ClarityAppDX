@@ -59,5 +59,24 @@ namespace Clarity.CryptoProvider
             string NewUserToken = "";
             return NewUserToken;
         }
+
+        public string GetTemporaryPassword()
+        {
+            string TempPassword = "";
+            char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz*$#@!".ToCharArray();
+            Random rand = new Random();
+            
+                // Make a word.
+                for (int j = 1; j <= 7; j++)
+                {
+                    // Pick a random number between 0 and 65
+                    // to select a letter from the letters array.
+                    int letter_num = rand.Next(0, letters.Length - 1);
+                    // Append the letter.
+                    TempPassword += letters[letter_num];
+                }
+
+            return TempPassword;
+        }
     }
 }

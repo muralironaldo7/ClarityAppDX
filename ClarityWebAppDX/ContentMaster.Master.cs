@@ -11,7 +11,17 @@ namespace ClarityWebAppDX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                if(Session["LoginID"] != null)
+                {
+                    lblFullName.Text = Session["FullName"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
+            }
         }
 
         protected void LeftMenuBar_ItemClick(object source, DevExpress.Web.NavBarItemEventArgs e)
@@ -35,6 +45,11 @@ namespace ClarityWebAppDX
                     Response.Redirect("UserManagement.aspx", true);
                     break;
             }
+        }
+
+        protected void cmdLogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Logout.aspx");
         }
     }
 }

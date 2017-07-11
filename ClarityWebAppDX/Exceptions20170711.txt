@@ -1,0 +1,7 @@
+[7/11/2017 9:57:24 AM] - ExecuteStoredProcedure | Invalid column name 'CreatedBy'.
+[7/11/2017 9:58:20 AM] - ExecuteStoredProcedure | Invalid column name 'CreatedBy'.
+[7/11/2017 9:58:49 AM] - ExecuteStoredProcedure | Invalid column name 'CreatedBy'.
+[7/11/2017 9:59:02 AM] - ExecuteStoredProcedure | Invalid column name 'CreatedBy'.
+[7/11/2017 1:18:05 PM] - ExecuteNonQuery | Procedure or function 'spAddUserAction' expects parameter '@PramRefID', which was not supplied.
+[7/11/2017 3:40:38 PM] - ExecuteNonQuery | Procedure or function 'spAddUser' expects parameter '@ParamUserName', which was not supplied.
+[7/11/2017 3:40:39 PM] - ExecuteNonQuery | Procedure or function 'spAddUser' expects parameter '@ParamUserName', which was not supplied.

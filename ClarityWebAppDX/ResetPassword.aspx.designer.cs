@@ -10,7 +10,7 @@
 namespace ClarityWebAppDX {
     
     
-    public partial class LoginPage {
+    public partial class ResetPasswordPage {
         
         /// <summary>
         /// txtUserName control.
@@ -31,13 +31,31 @@ namespace ClarityWebAppDX {
         protected global::DevExpress.Web.ASPxTextBox txtPassword;
         
         /// <summary>
-        /// cmdLogin control.
+        /// txtNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton cmdLogin;
+        protected global::DevExpress.Web.ASPxTextBox txtNewPassword;
+        
+        /// <summary>
+        /// txtConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtConfirm;
+        
+        /// <summary>
+        /// cmdSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton cmdSubmit;
         
         /// <summary>
         /// lblErr control.

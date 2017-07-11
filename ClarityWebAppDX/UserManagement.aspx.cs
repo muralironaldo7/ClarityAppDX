@@ -26,23 +26,81 @@ namespace ClarityWebAppDX
 
         protected void UserGridView_DataBinding(object sender, EventArgs e)
         {
-            DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
-            string data = DBAgent.ExecuteStoredProcedure("dbo.spGetAllUsers");
-            DataSet ds = CommonHelpers.GetDataSetFromXml(data);
-            if (ds.Tables.Count > 0)
+            try
             {
-                UserGridView.DataSource = ds.Tables[0];
+                DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+                string data = DBAgent.ExecuteStoredProcedure("dbo.spGetAllUsers");
+                DataSet ds = CommonHelpers.GetDataSetFromXml(data);
+                if (ds.Tables.Count > 0)
+                {
+                    UserGridView.DataSource = ds.Tables[0];
+                }
             }
+            catch(Exception ex)
+            {
+                CommonHelpers.writeLogToFile("UserGridView_DataBinding: UserManagement.aspx", ex.Message);
+            }
+            
         }
 
         protected void UserGridView_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
         {
-            
+            try
+            {
+                DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+                DBAgent.AddParameter("@ParamLoginID", e.Keys[0]);
+                DBAgent.AddParameter("@ParamUpdatedBy", Session["LoginID"]);
+                DBAgent.ExecuteNonQuery("dbo.spDeleteUser");
+                e.Cancel = true;
+                UserGridView.DataBind();
+            }
+            catch (Exception ex)
+            {
+                CommonHelpers.writeLogToFile("UserGridView_RowDeleting: UserManagement.aspx", ex.Message);
+            }
         }
 
         protected void UserGridView_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
         {
+            try
+            {
+                securityAgent = new CryptoProvider();
+                DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+                DBAgent.AddParameter("@ParamUserName", e.NewValues["UserName"]);
+                DBAgent.AddParameter("@ParamFirstName", e.NewValues["FirstName"]);
+                DBAgent.AddParameter("@ParamLastName", e.NewValues["LastName"]);
+                DBAgent.AddParameter("@ParamPassword", securityAgent.GetTemporaryPassword());
+                DBAgent.AddParameter("@ParamModifiedBy", Session["LoginID"]);
+                DBAgent.ExecuteNonQuery("dbo.spAddUser");
+                e.Cancel = true;
+                UserGridView.CancelEdit();
+                UserGridView.DataBind();
+            }
+            catch (Exception ex)
+            {
+                CommonHelpers.writeLogToFile("UserGridView_RowInserting: UserManagement.aspx", ex.Message);
+            }
+        }
 
+        protected void UserGridView_CustomButtonCallback(object sender, DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs e)
+        {
+            try
+            {
+                
+                securityAgent = new CryptoProvider();
+                DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+                DBAgent.AddParameter("@ParamLoginID", UserGridView.GetRowValues(e.VisibleIndex, "LoginID"));
+                DBAgent.AddParameter("@ParamNewPassword", securityAgent.GetTemporaryPassword());
+                DBAgent.AddParameter("@ParamIsTempPassword", 1);
+                DBAgent.AddParameter("@ParamComment", "Password reset by Admin");
+                DBAgent.ExecuteNonQuery("dbo.spUpdatePassword");
+
+                UserGridView.DataBind();
+            }
+            catch (Exception ex)
+            {
+                CommonHelpers.writeLogToFile("UserGridView_CustomButtonCallback: UserManagement.aspx", ex.Message);
+            }
         }
     }
 }

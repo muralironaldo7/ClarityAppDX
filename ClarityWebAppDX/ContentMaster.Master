@@ -43,7 +43,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-3 col-xs-offset-9 text-right">
-                                    <asp:LinkButton ID="cmdLogout" runat="server" CssClass="sessioninfotext LinkButton">Logout</asp:LinkButton>
+                                    <asp:LinkButton ID="cmdLogout" runat="server" CssClass="sessioninfotext LinkButton" OnClick="cmdLogout_Click">Logout</asp:LinkButton>
                                 </div>
                             </div>
                             
