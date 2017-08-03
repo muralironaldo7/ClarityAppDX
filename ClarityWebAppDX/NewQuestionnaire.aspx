@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
     <div class="row">
         <div class="col-xs-12 toolbar-row">
-            <span class="toolbar-title">New Questionnaire Configurtaion</span>
+            <span class="toolbar-title">New Questionnaire Configuration</span>
         </div>
     </div>
     <br />
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-md-6">
                         <dx:ASPxComboBox ID="cmbRiskType" runat="server" ClientInstanceName="cmbRiskType" Caption="Risk Type" Width="100%" DataSourceID="ConfigDataSource" OnDataBinding="cmbRiskType_DataBinding" TextField="ConfigurationName" ValueField="TypeID" >
                             <ValidationSettings ValidationGroup = "Threshold" ErrorTextPosition="Bottom">
                                 <RequiredField IsRequired="true" ErrorText="Select Configuration"/>
@@ -37,7 +37,7 @@
                         </dx:ASPxComboBox>
                         <asp:SqlDataSource ID="ConfigDataSource" runat="server"></asp:SqlDataSource>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-md-6">
                         <dx:ASPxTextBox ID="txtRiskThreshold" runat="server" Width="100%" Caption="Risk Thresold Value" ClientInstanceName ="txtRiskThreshold">
                             <ValidationSettings ValidationGroup="Threshold" ErrorTextPosition="Bottom">
                                 <RequiredField IsRequired ="true" ErrorText="Enter value"/>

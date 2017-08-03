@@ -35,15 +35,22 @@ function OnAnswerListGridViewSelectionChanged(s, e) {
 
 function GetRowValues(values) {
     rowText = values;
-    lbSelectedAnswers.BeginUpdate()
-    if (selectionState) {
-        lbSelectedAnswers.AddItem(rowText, rowKey);
+    //lbSelectedAnswers.BeginUpdate()
+    //if (selectionState) {
+    //    lbSelectedAnswers.AddItem(rowText, rowKey);
+    //}
+    //else {
+    //    var item = lbSelectedAnswers.FindItemByValue(rowKey);
+    //    lbSelectedAnswers.RemoveItem(item.index);
+    //}
+    //lbSelectedAnswers.EndUpdate()
+
+    var CallbackValues = rowKey + "|" + rowText + "|" + selectionState;
+    if (rowKey != null)
+    {
+        lbSelectedAnswers.PerformCallback(CallbackValues);
     }
-    else {
-        var item = lbSelectedAnswers.FindItemByValue(rowKey);
-        lbSelectedAnswers.RemoveItem(item.index);
-    }
-    lbSelectedAnswers.EndUpdate()
+    
 
     rowText = null;
     selectionState = null;

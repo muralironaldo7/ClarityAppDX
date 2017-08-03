@@ -13,7 +13,7 @@
     <br />
     <div class="row">
         <div class="col-xs-12">
-            <div class="card paddedCard cardShadow">
+            <div class="card paddedCard cardShadow fullwidth">
                 <h3>Questionnaire Details</h3>
                 <hr class="divider"/>
                 <div class="col-md-6">
@@ -87,7 +87,9 @@
 
                     <br />
 
-                    <dx:ASPxListBox ID="lbSelectedAnswers" ClientInstanceName="lbSelectedAnswers" runat="server" ValueType="System.String" ValueField="AnswerID" TextField="AnswerText" Width="100%" Height="175px"></dx:ASPxListBox>
+                    <dx:ASPxListBox ID="lbSelectedAnswers" ClientInstanceName="lbSelectedAnswers" runat="server" ValueType="System.String" ValueField="AnswerID" TextField="AnswerText" Width="100%" Height="175px" 
+                        OnCallback="lbSelectedAnswers_Callback">
+                    </dx:ASPxListBox>
                     <br />
                     <dx:ASPxButton ID="cmdSaveQuestion" runat="server" Text="Save Question" Width="100%" OnClick="cmdSaveQuestion_Click"></dx:ASPxButton>
                     <br />
@@ -99,16 +101,18 @@
                 <div class="card cardShadow col-xs-12 nomargin">
                     <h3>Current Questions</h3>
                     <hr class="divider"/>
-                    <dx:ASPxGridView ID="QuestionsGridView" runat="server" Width="100%" AutoGenerateColumns="False" OnDataBinding ="QuestionsGridView_DataBinding">
+                    <dx:ASPxGridView ID="QuestionsGridView" runat="server" Width="100%" AutoGenerateColumns="False" OnDataBinding ="QuestionsGridView_DataBinding" OnRowDeleting="QuestionsGridView_RowDeleting" KeyFieldName="QID">
                         <Settings ShowColumnHeaders="false" />
                         <SettingsPager PageSize="15">
                         </SettingsPager>
                         <SettingsBehavior AllowGroup="False" AllowSort="False" />
-                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                        <SettingsDataSecurity AllowEdit="False" AllowInsert="False" />
                         <Columns>
-                            <dx:GridViewDataTextColumn Caption="QAID" FieldName="QID" Visible="False" VisibleIndex="0">
+                            <dx:GridViewCommandColumn ShowDeleteButton="True" VisibleIndex="0">
+                            </dx:GridViewCommandColumn>
+                            <dx:GridViewDataTextColumn Caption="QAID" FieldName="QID" Visible="False" VisibleIndex="1">
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn Caption="Question Text" FieldName="QuestionText" VisibleIndex="1" Width="100%">
+                            <dx:GridViewDataTextColumn Caption="Question Text" FieldName="QuestionText" VisibleIndex="2" Width="100%">
                             </dx:GridViewDataTextColumn>
                         </Columns>
                     </dx:ASPxGridView>

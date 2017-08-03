@@ -1,0 +1,2 @@
+[7/28/2017 10:09:21 AM] - ExecuteNonQuery | Error converting data type nvarchar to int.
+[7/28/2017 10:12:56 AM] - ExecuteNonQuery | Error converting data type nvarchar to int.

@@ -11,6 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!-- favicons -->
+    <meta name="theme-color" content="#4f2b7c">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
     <!-- ************** CSS FILES GO HERE ******************** -->
     <link href="Helpers/bootstrap.min.css" rel="stylesheet" />
     <link href="Helpers/bootstrap-theme.min.css" rel="stylesheet" />
@@ -52,7 +60,7 @@
                 </PanelCollection>
             </dx:ASPxPanel>
 
-            <dx:ASPxPanel ID="LeftPanel" runat="server" Width="300px" Collapsible="true" FixedPosition="WindowLeft" FixedPositionOverlap="true" CssClass="text-center">
+            <dx:ASPxPanel ID="LeftPanel" runat="server" Width="300px" Collapsible="true" FixedPosition="WindowLeft" FixedPositionOverlap="true" CssClass="text-center" ScrollBars="Auto">
                 <SettingsAdaptivity CollapseAtWindowInnerWidth="1300" />
                 <PanelCollection>
                     <dx:PanelContent runat="server">
@@ -67,6 +75,16 @@
                                     <Items>
                                         <dx:NavBarItem Text="Dashboard" Name="Dashboard">
                                             <Image Height="40px" Url="Images/Icons/Dashboard.png"></Image>
+                                        </dx:NavBarItem>
+                                        <dx:NavBarItem Text="Logout" Name="Logout">
+                                            <Image Height="40px" Url="Images/Icons/Logout.png"></Image>
+                                        </dx:NavBarItem>
+                                    </Items>
+                                </dx:NavBarGroup>
+                                <dx:NavBarGroup Text="Patient Management">
+                                    <Items>
+                                        <dx:NavBarItem Text="Patient Scheduling" Name="PatientSchedule">
+                                            <Image Height="40px" Url="Images/Icons/Schedule.png"></Image>
                                         </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>
@@ -90,10 +108,13 @@
                                         </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>
-                                <dx:NavBarGroup Text="User Management">
+                                <dx:NavBarGroup Text="Administration">
                                     <Items>
-                                        <dx:NavBarItem Text="Add New User" Name="UserManagement">
+                                        <dx:NavBarItem Text="Users" Name="UserManagement">
                                             <Image Height="40px" Url="Images/Icons/Management.png"></Image>
+                                        </dx:NavBarItem>
+                                        <dx:NavBarItem Text="Physicians" Name="PhysicianManagement">
+                                            <Image Height="40px" Url="Images/Icons/Physician.png"></Image>
                                         </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>

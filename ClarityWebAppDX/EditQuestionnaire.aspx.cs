@@ -222,6 +222,7 @@ namespace ClarityWebAppDX
             lbSelectedAnswers.Items.Clear();
             AnswerListGridView.Selection.UnselectAll();
             txtQuestion.Text = "";
+            Session["CurrentAnswerList"] = null;
         }
 
         protected void QuestionsGridView_DataBinding(object sender, EventArgs e)
@@ -250,6 +251,61 @@ namespace ClarityWebAppDX
             RefreshForm();
             ConfigGridView.DataBind();
             QuestionsGridView.DataBind();
+        }
+
+        protected void QuestionsGridView_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+            e.Cancel = true;
+            try
+            {
+                DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
+                DBAgent.AddParameter("@ParamQuestionnaireID", cmbQuestionnaireList.SelectedItem.Value);
+                DBAgent.AddParameter("@ParamQID", e.Keys[0]);
+                DBAgent.AddParameter("@ParamLoginID", Session["LoginID"]);
+                DBAgent.ExecuteNonQuery("dbo.spDeleteQuestionForQuestionnaire");
+
+                QuestionsGridView.DataBind();
+
+            }
+            catch(Exception ex)
+            {
+                CommonHelpers.writeLogToFile("QuestionsGridView_DataBinding: EditQuestionnaire.aspx", ex.Message);
+            }
+
+        }
+
+        protected void lbSelectedAnswers_Callback(object sender, CallbackEventArgsBase e)
+        {
+            ClarityDBSet.AnswerListDataTable ansList = new ClarityDBSet.AnswerListDataTable();
+            if(Session["CurrentAnswerList"] != null)
+            {
+                ansList = (ClarityDBSet.AnswerListDataTable) Session["CurrentAnswerList"];
+            }
+            else
+            {
+                ansList = new ClarityDBSet.AnswerListDataTable();
+            }
+
+            string[] valArray = e.Parameter.Split('|');
+            bool selectionState = bool.Parse(valArray[2]);
+            if(valArray[0] != null)
+            {
+                if (selectionState)
+                {
+                    if (!ansList.Rows.Contains(valArray[0]))
+                    {
+                        ansList.AddAnswerListRow(valArray[0], valArray[1]);
+                    }
+
+                }
+                else
+                {
+                    ansList.Rows.Remove(ansList.Rows.Find(valArray[0]));
+                }
+            }
+            Session["CurrentAnswerList"] = ansList;
+            lbSelectedAnswers.DataSource = Session["CurrentAnswerList"];
+            lbSelectedAnswers.DataBindItems();
         }
     }
 

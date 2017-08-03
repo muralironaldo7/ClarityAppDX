@@ -14,7 +14,7 @@
         <div class="col-xs-12">
             <div class="card paddedCard cardShadow fullwidth">
                 <div class="col-md-12">
-                    <h3>Current Users</h3>
+                    <h3>User Management</h3>
                     <hr class="divider"/>
                     <div class="row">
                         <div class="col-xs-12">
@@ -23,24 +23,38 @@
                                 <SettingsDataSecurity AllowEdit="False" />
                                 <SettingsSearchPanel Visible="True" />
                                 <SettingsCommandButton>
-                                    <NewButton>
-                                        <Image ToolTip="New" Url="Images/Icons/NewUser.png" />
+                                    <NewButton Text="Add User">
+                                        <Image ToolTip="New" Url="Images/Icons/NewUser.png" Height="32"/>
                                     </NewButton>
                                     <DeleteButton>
-                                        <Image ToolTip="Delete User" Url="Images/Icons/Delete.png" />
+                                        <Image ToolTip="Delete User" Url="Images/Icons/Delete.png" Height="32"/>
                                     </DeleteButton>
                                     <UpdateButton>
-                                        <Image ToolTip="Save" Url="Images/Icons/SAve.png" />
+                                        <Image ToolTip="Save" Url="Images/Icons/SAve.png" Height="32"/>
                                     </UpdateButton>
                                     <CancelButton>
-                                        <Image ToolTip="Cancel User" Url="Images/Icons/Cancel.png" />
+                                        <Image ToolTip="Cancel" Url="Images/Icons/Cancel.png" Height="32"/>
                                     </CancelButton>
                                 </SettingsCommandButton>
+                                <SettingsAdaptivity AdaptivityMode="HideDataCellsWindowLimit" HideDataCellsAtWindowInnerWidth="800" AllowOnlyOneAdaptiveDetailExpanded="true">
+                                    <AdaptiveDetailLayoutProperties>
+                                        <Styles>
+                                            <LayoutGroupBox>
+                                                <Caption Font-Bold="true"></Caption>
+                                            </LayoutGroupBox>
+                                            <LayoutItem>
+                                                <Caption Font-Bold="true"></Caption>
+                                                <HelpText Font-Bold="true"></HelpText>
+                                            </LayoutItem>
+                                        </Styles>
+                                        <SettingsAdaptivity SwitchToSingleColumnAtWindowInnerWidth="600" />
+                                    </AdaptiveDetailLayoutProperties>
+                                </SettingsAdaptivity>
                                 <Columns>
-                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ButtonRenderMode="Image">
+                                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ButtonRenderMode="Image" Width="100">
                                         <CustomButtons>
                                             <dx:GridViewCommandColumnCustomButton ID="Reset">
-                                                <Image ToolTip="Reset Password" Url="Images/Icons/Reset.png" />
+                                                <Image ToolTip="Reset Password" Url="Images/Icons/Reset.png" Height="32" />
                                             </dx:GridViewCommandColumnCustomButton>
                                         </CustomButtons>
                                     </dx:GridViewCommandColumn>

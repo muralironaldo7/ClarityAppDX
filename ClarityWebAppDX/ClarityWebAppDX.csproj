@@ -74,7 +74,9 @@
   <ItemGroup>
     <Content Include="Helpers\EditQuestionnaire.js" />
     <Content Include="Helpers\NewQuestionnaire.js" />
+    <Content Include="Helpers\PatientList.js" />
     <Content Include="Images\Icons\add.png" />
+    <Content Include="Images\Icons\Cancel.png" />
     <Content Include="Images\Icons\Dashboard.png" />
     <Content Include="Images\Icons\Delete.png" />
     <Content Include="Images\Icons\Edit.png" />
@@ -84,6 +86,7 @@
     <Content Include="Images\Icons\Profile.png" />
     <Content Include="Images\Icons\Report.png" />
     <Content Include="Images\Icons\Reset.png" />
+    <Content Include="Images\Icons\Save.png" />
     <Content Include="Images\Icons\View.png" />
     <Content Include="packages.config" />
     <Content Include="LayoutMaster.Master" />
@@ -95,6 +98,20 @@
     <Content Include="UserManagement.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="ResetPassword.aspx" />
+    <Content Include="Physicians.aspx" />
+    <Content Include="ClarityDBSet.xsc">
+      <DependentUpon>ClarityDBSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="PatientList.aspx" />
+    <Content Include="PatientReport.aspx" />
+    <None Include="ClarityDBSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClarityDBSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ClarityDBSet.xss">
+      <DependentUpon>ClarityDBSet.xsd</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -117,6 +134,11 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClarityDBSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClarityDBSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ContentMaster.Master.cs">
       <DependentUpon>ContentMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -190,6 +212,27 @@
     </Compile>
     <Compile Include="ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Physicians.aspx.cs">
+      <DependentUpon>Physicians.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Physicians.aspx.designer.cs">
+      <DependentUpon>Physicians.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientList.aspx.cs">
+      <DependentUpon>PatientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientList.aspx.designer.cs">
+      <DependentUpon>PatientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientReport.aspx.cs">
+      <DependentUpon>PatientReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientReport.aspx.designer.cs">
+      <DependentUpon>PatientReport.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

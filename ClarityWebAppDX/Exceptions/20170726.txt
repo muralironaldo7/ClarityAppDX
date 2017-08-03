@@ -1,0 +1,12 @@
+[7/26/2017 7:18:23 AM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 9:26:14 AM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 9:44:28 AM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 10:01:43 AM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 11:17:37 AM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 12:05:13 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 12:09:07 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 12:09:59 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 12:11:12 PM] - cmdLogin_Click: Login.aspx | A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+[7/26/2017 12:11:19 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 12:41:37 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[7/26/2017 2:08:21 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.

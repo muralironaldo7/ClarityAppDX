@@ -11,7 +11,7 @@
     <br />
     <div class="row">
         <div class="col-xs-12">
-            <div class="card paddedCard cardShadow">
+            <div class="card paddedCard cardShadow fullwidth">
                 <div class="col-md-12">
                     <dx:ASPxComboBox ID="cmbQuestionnaireList" runat="server" Caption="Selected Questionnaire" Width="100%" OnDataBound="cmbQuestionnaireList_DataBound" ValueType="System.Int32" AutoPostBack="true" OnSelectedIndexChanged="cmbQuestionnaireList_SelectedIndexChanged">
                        

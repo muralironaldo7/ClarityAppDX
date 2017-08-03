@@ -13,6 +13,7 @@ namespace ClarityWebAppDX
 {
     public partial class LoginPage : System.Web.UI.Page
     {
+
         CryptoProvider securityAgent = null;
         DataAccessProvider DBAgent = null;
         protected void Page_Load(object sender, EventArgs e)
