@@ -53,6 +53,10 @@ namespace ClarityWebAppDX
                 case "patientschedule":
                     Response.Redirect("PatientList.aspx", true);
                     break;
+                case "patientreport":
+                    Response.Redirect("PatientReport.aspx", true);
+                    break;
+                    
             }
         }
 
