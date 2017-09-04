@@ -4,6 +4,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
-    <dx:ASPxDocumentViewer ID="ASPxDocumentViewer1" runat="server" Height="1100px" ReportTypeName="QuestionnaireResponse" Theme="MaterialCompact" Width="100%">
+    <dx:ASPxDocumentViewer ID="ReportViewerControl" runat="server" Height="1100px" ReportTypeName="QuestionnaireResponse" Theme="MaterialCompact" Width="100%">
     </dx:ASPxDocumentViewer>
 </asp:Content>

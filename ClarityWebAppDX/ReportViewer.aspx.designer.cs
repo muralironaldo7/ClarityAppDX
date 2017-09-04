@@ -13,12 +13,12 @@ namespace ClarityWebAppDX {
     public partial class ReportViewer {
         
         /// <summary>
-        /// ASPxDocumentViewer1 control.
+        /// ReportViewerControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ASPxDocumentViewer ASPxDocumentViewer1;
+        protected global::DevExpress.XtraReports.Web.ASPxDocumentViewer ReportViewerControl;
     }
 }

@@ -58,6 +58,15 @@ namespace ClarityWebAppDX {
         protected global::DevExpress.Web.ASPxGridView gvQuestionnaireHistory;
         
         /// <summary>
+        /// ViewResponse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton ViewResponse;
+        
+        /// <summary>
         /// gvAssignedQuestionnaire control.
         /// </summary>
         /// <remarks>

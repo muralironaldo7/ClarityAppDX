@@ -86,7 +86,6 @@ namespace ClarityWebAppDX
         {
             try
             {
-                
                 securityAgent = new CryptoProvider();
                 DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
                 DBAgent.AddParameter("@ParamLoginID", UserGridView.GetRowValues(e.VisibleIndex, "LoginID"));

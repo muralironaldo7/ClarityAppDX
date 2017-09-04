@@ -116,7 +116,7 @@
                                         <h4>Questionnaire History</h4>
                                         <hr class="divider"/>
                                         <dx:ASPxGridView ID="gvQuestionnaireHistory" runat="server" Width="100%" AutoGenerateColumns="False" KeyFieldName="PQID" 
-                                            OnDataBinding="gvQuestionnaireHistory_DataBinding" OnHtmlRowPrepared="gvQuestionnaireHistory_HtmlRowPrepared">
+                                            OnDataBinding="gvQuestionnaireHistory_DataBinding" OnHtmlRowPrepared="gvQuestionnaireHistory_HtmlRowPrepared" OnCustomButtonCallback="gvQuestionnaireHistory_CustomButtonCallback">
                                             <SettingsBehavior AllowSelectByRowClick="true" AllowSelectSingleRowOnly="true"/>
                                             <SettingsPager PageSize ="5"></SettingsPager>
                                             <SettingsDataSecurity AllowEdit="False" AllowInsert="False" AllowDelete="False"></SettingsDataSecurity>
@@ -127,7 +127,15 @@
                                                 <dx:GridViewDataTextColumn FieldName="CompletedDate" Name="colCompletedDate" Caption="Completed Date" VisibleIndex="2"></dx:GridViewDataTextColumn>
                                                 <dx:GridViewDataTextColumn FieldName="Score" Name="colScore" Caption="Score" VisibleIndex="3"></dx:GridViewDataTextColumn>
                                                 <dx:GridViewDataTextColumn FieldName="RiskCategory" Name="colRiskCategory" Caption="Risk Category" VisibleIndex="4"></dx:GridViewDataTextColumn>
+                                                <dx:GridViewCommandColumn ButtonRenderMode="Image" VisibleIndex="5" Caption="Report" Width="40">
+                                                    <CustomButtons>
+                                                        <dx:GridViewCommandColumnCustomButton ID="ViewResponse">
+                                                            <Image ToolTip="View Responses" Url="Images/Icons/PatientResponse.png" Height="32"/>
+                                                        </dx:GridViewCommandColumnCustomButton>
+                                                    </CustomButtons>
+                                                </dx:GridViewCommandColumn>
                                             </Columns>
+                                            <ClientSideEvents EndCallback="gvQuestionnaireHistoryEndCallback" />
                                         </dx:ASPxGridView>
                                         <br /><br />
                                     </div>

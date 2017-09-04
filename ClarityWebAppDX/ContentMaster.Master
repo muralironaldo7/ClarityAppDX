@@ -81,14 +81,20 @@
                                         </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>
-                                <dx:NavBarGroup Text="Patient Management">
+                                <dx:NavBarGroup Text="Administration">
                                     <Items>
+                                        <dx:NavBarItem Text="User Management" Name="UserManagement">
+                                            <Image Height="40px" Url="Images/Icons/Management.png"></Image>
+                                        </dx:NavBarItem>
+                                        <dx:NavBarItem Text="Physician Management" Name="PhysicianManagement">
+                                            <Image Height="40px" Url="Images/Icons/Physician.png"></Image>
+                                        </dx:NavBarItem>
                                         <dx:NavBarItem Text="Patient Scheduling" Name="PatientSchedule">
                                             <Image Height="40px" Url="Images/Icons/Schedule.png"></Image>
                                         </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>
-                                <dx:NavBarGroup Text="Questionnaire">
+                                <dx:NavBarGroup Text="Questionnaire Management">
                                     <Items>
                                         <dx:NavBarItem Text="New Questionnaire" Name="NewQuestionnaire">
                                             <Image Height="40px" Url="Images/Icons/New.png"></Image>
@@ -101,24 +107,14 @@
                                         </dx:NavBarItem>
                                     </Items>
                                 </dx:NavBarGroup>
-                                <dx:NavBarGroup Text="Reports">
+                                <%--<dx:NavBarGroup Text="Reports">
                                     <Items>
                                         <dx:NavBarItem Text="Patient Report" Name="PatientReport">
                                             <Image Height="40px" Url="Images/Icons/Report.png"></Image>
                                         </dx:NavBarItem>
                                     </Items>
-                                </dx:NavBarGroup>
-                                <dx:NavBarGroup Text="Administration">
-                                    <Items>
-                                        <dx:NavBarItem Text="Users" Name="UserManagement">
-                                            <Image Height="40px" Url="Images/Icons/Management.png"></Image>
-                                        </dx:NavBarItem>
-                                        <dx:NavBarItem Text="Physicians" Name="PhysicianManagement">
-                                            <Image Height="40px" Url="Images/Icons/Physician.png"></Image>
-                                        </dx:NavBarItem>
-                                    </Items>
-                                </dx:NavBarGroup>
-
+                                </dx:NavBarGroup>--%>
+                                
                             </Groups>
                         </dx:ASPxNavBar>
                     </dx:PanelContent>

@@ -36,7 +36,10 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
     private DetailBand Detail1;
     private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     private XRPageInfo ReportDateVal;
-    private DevExpress.XtraReports.Parameters.Parameter PatientID;
+    private FormattingRule ModerateRule;
+    private FormattingRule HighRisk;
+    private FormattingRule LowRisk;
+    private DevExpress.XtraReports.Parameters.Parameter PQID;
 
     /// <summary>
     /// Required designer variable.
@@ -76,43 +79,43 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionnaireResponse));
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
-            this.PPGLogo = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.FirstName = new DevExpress.XtraReports.UI.XRLabel();
-            this.LastName = new DevExpress.XtraReports.UI.XRLabel();
-            this.DOB = new DevExpress.XtraReports.UI.XRLabel();
-            this.valFirstName = new DevExpress.XtraReports.UI.XRLabel();
-            this.valDOB = new DevExpress.XtraReports.UI.XRLabel();
-            this.valLasttName = new DevExpress.XtraReports.UI.XRLabel();
-            this.TestDate = new DevExpress.XtraReports.UI.XRLabel();
-            this.valTestDate = new DevExpress.XtraReports.UI.XRLabel();
+            this.HeaderLine = new DevExpress.XtraReports.UI.XRLine();
+            this.RiskCategory = new DevExpress.XtraReports.UI.XRLabel();
+            this.ModerateRule = new DevExpress.XtraReports.UI.FormattingRule();
+            this.HighRisk = new DevExpress.XtraReports.UI.FormattingRule();
+            this.LowRisk = new DevExpress.XtraReports.UI.FormattingRule();
+            this.valRiskCategory = new DevExpress.XtraReports.UI.XRLabel();
             this.Score = new DevExpress.XtraReports.UI.XRLabel();
             this.valScore = new DevExpress.XtraReports.UI.XRLabel();
-            this.RiskCategory = new DevExpress.XtraReports.UI.XRLabel();
-            this.valRiskCategory = new DevExpress.XtraReports.UI.XRLabel();
-            this.HeaderLine = new DevExpress.XtraReports.UI.XRLine();
+            this.TestDate = new DevExpress.XtraReports.UI.XRLabel();
+            this.valTestDate = new DevExpress.XtraReports.UI.XRLabel();
+            this.valDOB = new DevExpress.XtraReports.UI.XRLabel();
+            this.valLasttName = new DevExpress.XtraReports.UI.XRLabel();
+            this.DOB = new DevExpress.XtraReports.UI.XRLabel();
+            this.LastName = new DevExpress.XtraReports.UI.XRLabel();
+            this.PPGLogo = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.FirstName = new DevExpress.XtraReports.UI.XRLabel();
+            this.valFirstName = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.ReportDate = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.ReportDateVal = new DevExpress.XtraReports.UI.XRPageInfo();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.PatientResponses = new DevExpress.XtraReports.UI.XRLabel();
             this.Testname = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.ReportDateVal = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.@PatientID = new DevExpress.XtraReports.Parameters.Parameter();
-            this.@QuestionnarieID = new DevExpress.XtraReports.Parameters.Parameter();
-            this.PatientResponses = new DevExpress.XtraReports.UI.XRLabel();
-            this.QuestionVal = new DevExpress.XtraReports.UI.XRLabel();
             this.AnswerVal = new DevExpress.XtraReports.UI.XRLabel();
+            this.QuestionVal = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.PQID = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -156,127 +159,81 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.PageHeader.HeightF = 103.5F;
             this.PageHeader.Name = "PageHeader";
             // 
-            // PPGLogo
+            // HeaderLine
             // 
-            this.PPGLogo.Image = ((System.Drawing.Image)(resources.GetObject("PPGLogo.Image")));
-            this.PPGLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 21.33334F);
-            this.PPGLogo.Name = "PPGLogo";
-            this.PPGLogo.SizeF = new System.Drawing.SizeF(198.75F, 59.16667F);
-            this.PPGLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            this.HeaderLine.BorderWidth = 1F;
+            this.HeaderLine.LineWidth = 2;
+            this.HeaderLine.LocationFloat = new DevExpress.Utils.PointFloat(0F, 90.33335F);
+            this.HeaderLine.Name = "HeaderLine";
+            this.HeaderLine.SizeF = new System.Drawing.SizeF(802F, 13.16666F);
+            this.HeaderLine.StylePriority.UseBorderWidth = false;
             // 
-            // FirstName
+            // RiskCategory
             // 
-            this.FirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.FirstName.LocationFloat = new DevExpress.Utils.PointFloat(255F, 21.33334F);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.FirstName.SizeF = new System.Drawing.SizeF(121.6667F, 23F);
-            this.FirstName.StylePriority.UseFont = false;
-            this.FirstName.StylePriority.UseForeColor = false;
-            this.FirstName.Text = "First Name";
+            this.RiskCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RiskCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.RiskCategory.FormattingRules.Add(this.ModerateRule);
+            this.RiskCategory.FormattingRules.Add(this.HighRisk);
+            this.RiskCategory.FormattingRules.Add(this.LowRisk);
+            this.RiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(560.7915F, 67.33335F);
+            this.RiskCategory.Name = "RiskCategory";
+            this.RiskCategory.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.RiskCategory.SizeF = new System.Drawing.SizeF(122.2917F, 23F);
+            this.RiskCategory.StylePriority.UseFont = false;
+            this.RiskCategory.StylePriority.UseForeColor = false;
+            this.RiskCategory.StylePriority.UseTextAlignment = false;
+            this.RiskCategory.Text = "Risk Category:";
+            this.RiskCategory.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // LastName
+            // ModerateRule
             // 
-            this.LastName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.LastName.LocationFloat = new DevExpress.Utils.PointFloat(255F, 44.33334F);
-            this.LastName.Name = "LastName";
-            this.LastName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.LastName.SizeF = new System.Drawing.SizeF(121.6667F, 23F);
-            this.LastName.StylePriority.UseFont = false;
-            this.LastName.StylePriority.UseForeColor = false;
-            this.LastName.Text = "Last Name";
+            this.ModerateRule.Condition = "[RiskCategory]=\'Medium\'";
+            this.ModerateRule.Formatting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.ModerateRule.Name = "ModerateRule";
             // 
-            // DOB
+            // HighRisk
             // 
-            this.DOB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.DOB.LocationFloat = new DevExpress.Utils.PointFloat(255F, 67.33335F);
-            this.DOB.Name = "DOB";
-            this.DOB.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DOB.SizeF = new System.Drawing.SizeF(121.6667F, 23F);
-            this.DOB.StylePriority.UseFont = false;
-            this.DOB.StylePriority.UseForeColor = false;
-            this.DOB.Text = "Date of Birth";
+            this.HighRisk.Condition = "[RiskCategory]=\'High\'";
+            this.HighRisk.Formatting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.HighRisk.Name = "HighRisk";
             // 
-            // valFirstName
+            // LowRisk
             // 
-            this.valFirstName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.PatientFirstName")});
-            this.valFirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.valFirstName.LocationFloat = new DevExpress.Utils.PointFloat(376.6667F, 21.33334F);
-            this.valFirstName.Name = "valFirstName";
-            this.valFirstName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.valFirstName.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
-            this.valFirstName.StylePriority.UseFont = false;
-            this.valFirstName.StylePriority.UseForeColor = false;
+            this.LowRisk.Condition = "[RiskCategory]=\'Low\'";
+            this.LowRisk.Formatting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.LowRisk.Name = "LowRisk";
             // 
-            // valDOB
+            // valRiskCategory
             // 
-            this.valDOB.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.PatientDOB")});
-            this.valDOB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.valDOB.LocationFloat = new DevExpress.Utils.PointFloat(376.6667F, 67.33335F);
-            this.valDOB.Name = "valDOB";
-            this.valDOB.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.valDOB.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
-            this.valDOB.StylePriority.UseFont = false;
-            this.valDOB.StylePriority.UseForeColor = false;
-            // 
-            // valLasttName
-            // 
-            this.valLasttName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.PatientLastName")});
-            this.valLasttName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valLasttName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.valLasttName.LocationFloat = new DevExpress.Utils.PointFloat(376.6667F, 44.33334F);
-            this.valLasttName.Name = "valLasttName";
-            this.valLasttName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.valLasttName.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
-            this.valLasttName.StylePriority.UseFont = false;
-            this.valLasttName.StylePriority.UseForeColor = false;
-            // 
-            // TestDate
-            // 
-            this.TestDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.TestDate.LocationFloat = new DevExpress.Utils.PointFloat(572.2499F, 21.33334F);
-            this.TestDate.Name = "TestDate";
-            this.TestDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TestDate.SizeF = new System.Drawing.SizeF(110.8334F, 23F);
-            this.TestDate.StylePriority.UseFont = false;
-            this.TestDate.StylePriority.UseForeColor = false;
-            this.TestDate.Text = "Test Date";
-            // 
-            // valTestDate
-            // 
-            this.valTestDate.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.TestDate")});
-            this.valTestDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valTestDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.valTestDate.LocationFloat = new DevExpress.Utils.PointFloat(683.0833F, 21.33334F);
-            this.valTestDate.Name = "valTestDate";
-            this.valTestDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.valTestDate.SizeF = new System.Drawing.SizeF(118.9167F, 23F);
-            this.valTestDate.StylePriority.UseFont = false;
-            this.valTestDate.StylePriority.UseForeColor = false;
-            this.valTestDate.StylePriority.UseTextAlignment = false;
-            this.valTestDate.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.valRiskCategory.AutoWidth = true;
+            this.valRiskCategory.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.RiskCategory")});
+            this.valRiskCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valRiskCategory.ForeColor = System.Drawing.Color.Black;
+            this.valRiskCategory.FormattingRules.Add(this.ModerateRule);
+            this.valRiskCategory.FormattingRules.Add(this.HighRisk);
+            this.valRiskCategory.FormattingRules.Add(this.LowRisk);
+            this.valRiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(683.0833F, 67.33335F);
+            this.valRiskCategory.Name = "valRiskCategory";
+            this.valRiskCategory.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 5, 0, 0, 100F);
+            this.valRiskCategory.SizeF = new System.Drawing.SizeF(118.9167F, 23F);
+            this.valRiskCategory.StylePriority.UseFont = false;
+            this.valRiskCategory.StylePriority.UseForeColor = false;
+            this.valRiskCategory.StylePriority.UsePadding = false;
+            this.valRiskCategory.StylePriority.UseTextAlignment = false;
+            this.valRiskCategory.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // Score
             // 
             this.Score.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Score.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.Score.LocationFloat = new DevExpress.Utils.PointFloat(572.2501F, 44.33334F);
+            this.Score.LocationFloat = new DevExpress.Utils.PointFloat(560.7915F, 44.33333F);
             this.Score.Name = "Score";
             this.Score.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Score.SizeF = new System.Drawing.SizeF(110.8333F, 23F);
+            this.Score.SizeF = new System.Drawing.SizeF(122.2919F, 23F);
             this.Score.StylePriority.UseFont = false;
             this.Score.StylePriority.UseForeColor = false;
-            this.Score.Text = "Score\t";
+            this.Score.Text = "Score:";
             // 
             // valScore
             // 
@@ -293,41 +250,121 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.valScore.StylePriority.UseTextAlignment = false;
             this.valScore.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // RiskCategory
+            // TestDate
             // 
-            this.RiskCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RiskCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.RiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(572.2499F, 67.33335F);
-            this.RiskCategory.Name = "RiskCategory";
-            this.RiskCategory.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.RiskCategory.SizeF = new System.Drawing.SizeF(110.8334F, 23F);
-            this.RiskCategory.StylePriority.UseFont = false;
-            this.RiskCategory.StylePriority.UseForeColor = false;
-            this.RiskCategory.Text = "Risk Category";
+            this.TestDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.TestDate.LocationFloat = new DevExpress.Utils.PointFloat(560.7914F, 21.33335F);
+            this.TestDate.Name = "TestDate";
+            this.TestDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.TestDate.SizeF = new System.Drawing.SizeF(122.2918F, 23F);
+            this.TestDate.StylePriority.UseFont = false;
+            this.TestDate.StylePriority.UseForeColor = false;
+            this.TestDate.Text = "Test Date:";
             // 
-            // valRiskCategory
+            // valTestDate
             // 
-            this.valRiskCategory.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.RiskCategory")});
-            this.valRiskCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valRiskCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.valRiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(683.0833F, 67.33335F);
-            this.valRiskCategory.Name = "valRiskCategory";
-            this.valRiskCategory.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.valRiskCategory.SizeF = new System.Drawing.SizeF(118.9167F, 23F);
-            this.valRiskCategory.StylePriority.UseFont = false;
-            this.valRiskCategory.StylePriority.UseForeColor = false;
-            this.valRiskCategory.StylePriority.UseTextAlignment = false;
-            this.valRiskCategory.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.valTestDate.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.TestDate")});
+            this.valTestDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valTestDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
+            this.valTestDate.LocationFloat = new DevExpress.Utils.PointFloat(683.0833F, 21.33334F);
+            this.valTestDate.Name = "valTestDate";
+            this.valTestDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.valTestDate.SizeF = new System.Drawing.SizeF(118.9167F, 23F);
+            this.valTestDate.StylePriority.UseFont = false;
+            this.valTestDate.StylePriority.UseForeColor = false;
+            this.valTestDate.StylePriority.UseTextAlignment = false;
+            this.valTestDate.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // HeaderLine
+            // valDOB
             // 
-            this.HeaderLine.BorderWidth = 1F;
-            this.HeaderLine.LineWidth = 2;
-            this.HeaderLine.LocationFloat = new DevExpress.Utils.PointFloat(0F, 90.33335F);
-            this.HeaderLine.Name = "HeaderLine";
-            this.HeaderLine.SizeF = new System.Drawing.SizeF(802F, 13.16666F);
-            this.HeaderLine.StylePriority.UseBorderWidth = false;
+            this.valDOB.AutoWidth = true;
+            this.valDOB.CanShrink = true;
+            this.valDOB.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.PatientDOB")});
+            this.valDOB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
+            this.valDOB.LocationFloat = new DevExpress.Utils.PointFloat(325.7083F, 67.33335F);
+            this.valDOB.Name = "valDOB";
+            this.valDOB.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.valDOB.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
+            this.valDOB.StylePriority.UseFont = false;
+            this.valDOB.StylePriority.UseForeColor = false;
+            // 
+            // valLasttName
+            // 
+            this.valLasttName.AutoWidth = true;
+            this.valLasttName.CanShrink = true;
+            this.valLasttName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.PatientLastName")});
+            this.valLasttName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valLasttName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
+            this.valLasttName.LocationFloat = new DevExpress.Utils.PointFloat(325.7083F, 44.33333F);
+            this.valLasttName.Name = "valLasttName";
+            this.valLasttName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.valLasttName.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
+            this.valLasttName.StylePriority.UseFont = false;
+            this.valLasttName.StylePriority.UseForeColor = false;
+            // 
+            // DOB
+            // 
+            this.DOB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.DOB.LocationFloat = new DevExpress.Utils.PointFloat(215.5F, 67.33335F);
+            this.DOB.Name = "DOB";
+            this.DOB.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.DOB.SizeF = new System.Drawing.SizeF(110.2083F, 23F);
+            this.DOB.StylePriority.UseFont = false;
+            this.DOB.StylePriority.UseForeColor = false;
+            this.DOB.Text = "Date of Birth:";
+            // 
+            // LastName
+            // 
+            this.LastName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.LastName.LocationFloat = new DevExpress.Utils.PointFloat(215.5F, 44.33333F);
+            this.LastName.Name = "LastName";
+            this.LastName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.LastName.SizeF = new System.Drawing.SizeF(110.2083F, 23F);
+            this.LastName.StylePriority.UseFont = false;
+            this.LastName.StylePriority.UseForeColor = false;
+            this.LastName.Text = "Last Name:";
+            // 
+            // PPGLogo
+            // 
+            this.PPGLogo.Image = ((System.Drawing.Image)(resources.GetObject("PPGLogo.Image")));
+            this.PPGLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 21.33334F);
+            this.PPGLogo.Name = "PPGLogo";
+            this.PPGLogo.SizeF = new System.Drawing.SizeF(198.75F, 59.16667F);
+            this.PPGLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            // 
+            // FirstName
+            // 
+            this.FirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.FirstName.LocationFloat = new DevExpress.Utils.PointFloat(215.5F, 21.33335F);
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.FirstName.SizeF = new System.Drawing.SizeF(110.2083F, 23F);
+            this.FirstName.StylePriority.UseFont = false;
+            this.FirstName.StylePriority.UseForeColor = false;
+            this.FirstName.Text = "First Name:";
+            // 
+            // valFirstName
+            // 
+            this.valFirstName.AutoWidth = true;
+            this.valFirstName.CanShrink = true;
+            this.valFirstName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientDetailsReport.PatientFirstName")});
+            this.valFirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
+            this.valFirstName.LocationFloat = new DevExpress.Utils.PointFloat(325.7083F, 21.33335F);
+            this.valFirstName.Name = "valFirstName";
+            this.valFirstName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.valFirstName.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
+            this.valFirstName.StylePriority.UseFont = false;
+            this.valFirstName.StylePriority.UseForeColor = false;
             // 
             // PageFooter
             // 
@@ -357,10 +394,23 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.xrPageInfo1.Format = "Page {0}/{0}";
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(692F, 10F);
             this.xrPageInfo1.Name = "xrPageInfo1";
-            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.xrPageInfo1.StylePriority.UseFont = false;
             this.xrPageInfo1.StylePriority.UseForeColor = false;
+            // 
+            // ReportDateVal
+            // 
+            this.ReportDateVal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportDateVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
+            this.ReportDateVal.Format = "{0:MMMM d, yyyy h:mm tt}";
+            this.ReportDateVal.LocationFloat = new DevExpress.Utils.PointFloat(109.1667F, 10F);
+            this.ReportDateVal.Name = "ReportDateVal";
+            this.ReportDateVal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.ReportDateVal.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.ReportDateVal.SizeF = new System.Drawing.SizeF(205.6667F, 23F);
+            this.ReportDateVal.StylePriority.UseFont = false;
+            this.ReportDateVal.StylePriority.UseForeColor = false;
             // 
             // GroupHeader1
             // 
@@ -370,6 +420,20 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.GroupHeader1.HeightF = 75.83334F;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.RepeatEveryPage = true;
+            // 
+            // PatientResponses
+            // 
+            this.PatientResponses.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientResponses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
+            this.PatientResponses.LocationFloat = new DevExpress.Utils.PointFloat(215.5F, 32.33335F);
+            this.PatientResponses.Name = "PatientResponses";
+            this.PatientResponses.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.PatientResponses.SizeF = new System.Drawing.SizeF(371F, 29.66667F);
+            this.PatientResponses.StylePriority.UseFont = false;
+            this.PatientResponses.StylePriority.UseForeColor = false;
+            this.PatientResponses.StylePriority.UseTextAlignment = false;
+            this.PatientResponses.Text = "Patient Response";
+            this.PatientResponses.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Testname
             // 
@@ -404,88 +468,6 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.Detail1.HeightF = 79.16666F;
             this.Detail1.Name = "Detail1";
             // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "ClarityDB_Connection";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "spGetPatientDetailsReport";
-            queryParameter1.Name = "@ParamPatientID";
-            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.@PatientID]", typeof(int));
-            queryParameter2.Name = "@ParamTestID";
-            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.@QuestionnarieID]", typeof(int));
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.Parameters.Add(queryParameter2);
-            storedProcQuery1.StoredProcName = "spGetPatientDetailsReport";
-            storedProcQuery2.Name = "spGetPatientQuestionnaireDetailsReport";
-            queryParameter3.Name = "@ParamPatientID";
-            queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter3.Value = new DevExpress.DataAccess.Expression("[Parameters.@PatientID]", typeof(int));
-            queryParameter4.Name = "@ParamTestID";
-            queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter4.Value = new DevExpress.DataAccess.Expression("[Parameters.@QuestionnarieID]", typeof(int));
-            storedProcQuery2.Parameters.Add(queryParameter3);
-            storedProcQuery2.Parameters.Add(queryParameter4);
-            storedProcQuery2.StoredProcName = "spGetPatientQuestionnaireDetailsReport";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1,
-            storedProcQuery2});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
-            // 
-            // ReportDateVal
-            // 
-            this.ReportDateVal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportDateVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.ReportDateVal.Format = "{0:MMMM d, yyyy h:mm tt}";
-            this.ReportDateVal.LocationFloat = new DevExpress.Utils.PointFloat(109.1667F, 10F);
-            this.ReportDateVal.Name = "ReportDateVal";
-            this.ReportDateVal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.ReportDateVal.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.ReportDateVal.SizeF = new System.Drawing.SizeF(205.6667F, 23F);
-            this.ReportDateVal.StylePriority.UseFont = false;
-            this.ReportDateVal.StylePriority.UseForeColor = false;
-            // 
-            // @PatientID
-            // 
-            this.@PatientID.Description = "Patient ID";
-            this.@PatientID.Name = "@PatientID";
-            this.@PatientID.Type = typeof(int);
-            this.@PatientID.ValueInfo = "0";
-            // 
-            // @QuestionnarieID
-            // 
-            this.@QuestionnarieID.Description = "Questionnarie ID";
-            this.@QuestionnarieID.Name = "@QuestionnarieID";
-            this.@QuestionnarieID.Type = typeof(int);
-            this.@QuestionnarieID.ValueInfo = "0";
-            // 
-            // PatientResponses
-            // 
-            this.PatientResponses.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PatientResponses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.PatientResponses.LocationFloat = new DevExpress.Utils.PointFloat(215.5F, 32.33335F);
-            this.PatientResponses.Name = "PatientResponses";
-            this.PatientResponses.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.PatientResponses.SizeF = new System.Drawing.SizeF(371F, 29.66667F);
-            this.PatientResponses.StylePriority.UseFont = false;
-            this.PatientResponses.StylePriority.UseForeColor = false;
-            this.PatientResponses.StylePriority.UseTextAlignment = false;
-            this.PatientResponses.Text = "Patient Response";
-            this.PatientResponses.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // QuestionVal
-            // 
-            this.QuestionVal.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientQuestionnaireDetailsReport.QuestionText")});
-            this.QuestionVal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuestionVal.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.QuestionVal.Name = "QuestionVal";
-            this.QuestionVal.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 10, 100F);
-            this.QuestionVal.SizeF = new System.Drawing.SizeF(802F, 23F);
-            this.QuestionVal.StylePriority.UseFont = false;
-            this.QuestionVal.StylePriority.UsePadding = false;
-            // 
             // AnswerVal
             // 
             this.AnswerVal.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
@@ -500,11 +482,52 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.AnswerVal.StylePriority.UseForeColor = false;
             this.AnswerVal.StylePriority.UsePadding = false;
             // 
+            // QuestionVal
+            // 
+            this.QuestionVal.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientQuestionnaireDetailsReport.QuestionText")});
+            this.QuestionVal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuestionVal.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.QuestionVal.Name = "QuestionVal";
+            this.QuestionVal.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 10, 100F);
+            this.QuestionVal.SizeF = new System.Drawing.SizeF(802F, 23F);
+            this.QuestionVal.StylePriority.UseFont = false;
+            this.QuestionVal.StylePriority.UsePadding = false;
+            // 
             // xrLine1
             // 
             this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 55.16663F);
             this.xrLine1.Name = "xrLine1";
             this.xrLine1.SizeF = new System.Drawing.SizeF(802F, 23F);
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "ClarityDB_Connection";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "spGetPatientQuestionnaireDetailsReport";
+            queryParameter1.Name = "@ParamPQID";
+            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.PQID]", typeof(int));
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "spGetPatientQuestionnaireDetailsReport";
+            storedProcQuery2.Name = "spGetPatientDetailsReport";
+            queryParameter2.Name = "@ParamPQID";
+            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.PQID]", typeof(int));
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "spGetPatientDetailsReport";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1,
+            storedProcQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // PQID
+            // 
+            this.PQID.Description = "PQID";
+            this.PQID.Name = "PQID";
+            this.PQID.Type = typeof(int);
+            this.PQID.ValueInfo = "0";
+            this.PQID.Visible = false;
             // 
             // QuestionnaireResponse
             // 
@@ -520,10 +543,14 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.sqlDataSource1});
             this.DataMember = "spGetPatientDetailsReport";
             this.DataSource = this.sqlDataSource1;
+            this.FormattingRuleSheet.AddRange(new DevExpress.XtraReports.UI.FormattingRule[] {
+            this.ModerateRule,
+            this.HighRisk,
+            this.LowRisk});
             this.Margins = new System.Drawing.Printing.Margins(25, 23, 26, 34);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.@PatientID,
-            this.@QuestionnarieID});
+            this.PQID});
+            this.RequestParameters = false;
             this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -534,8 +561,6 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
     private void lblReportName_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
     {
     }
-
-    private DevExpress.XtraReports.Parameters.Parameter QuestionnarieID;
     private XRLabel PatientResponses;
     private XRLabel AnswerVal;
     private XRLabel QuestionVal;

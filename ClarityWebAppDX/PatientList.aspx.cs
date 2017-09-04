@@ -8,12 +8,14 @@ using Clarity.DataAccess;
 using System.Configuration;
 using System.Data;
 using DevExpress.Web;
+using Clarity.CryptoProvider;
 
 namespace ClarityWebAppDX
 {
     public partial class PatientList : System.Web.UI.Page
     {
         DataAccessProvider DBAgent = null;
+        CryptoProvider securityAgent = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -319,20 +321,51 @@ namespace ClarityWebAppDX
 
         protected void gvQuestionnaireHistory_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
         {
-            if(e != null && e.GetValue("RiskCategory") != null)
+            try
             {
-                if(e.GetValue("RiskCategory").ToString().Equals("High"))
+                if (e != null && e.GetValue("RiskCategory") != null)
                 {
-                    e.Row.BackColor = System.Drawing.Color.FromArgb(255,158,128);
+                    if (e.GetValue("RiskCategory").ToString().Equals("High"))
+                    {
+                        //Flat - rgb(231, 76, 60)
+                        //Light - rgb(255,158,128)
+                        e.Row.BackColor = System.Drawing.Color.FromArgb(255, 158, 128);
+                    }
+                    else if (e.GetValue("RiskCategory").ToString().Equals("Medium"))
+                    {
+                        //Flat - rgb(241, 196, 15)
+                        //Light - rgb(255, 255, 141)
+                        e.Row.BackColor = System.Drawing.Color.FromArgb(255, 255, 141);
+                    }
+                    else if (e.GetValue("RiskCategory").ToString().Equals("Low"))
+                    {
+                        //Flat - rgb(46, 204, 113)
+                        //Light - rgb(204, 255, 144)
+                        e.Row.BackColor = System.Drawing.Color.FromArgb(204, 255, 144);
+                    }
                 }
-                else if (e.GetValue("RiskCategory").ToString().Equals("Medium"))
+            }
+            catch (Exception ex)
+            {
+                CommonHelpers.writeLogToFile("gvQuestionnaireHistory_HtmlRowPrepared: PatientList.aspx", ex.Message);
+            }
+        }
+
+        protected void gvQuestionnaireHistory_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)
+        {
+            try
+            {
+                securityAgent = new CryptoProvider();
+                ASPxGridView gv = (ASPxGridView)sender;
+                object PQID = gv.GetRowValues(e.VisibleIndex, "PQID");
+                if(PQID != null)
                 {
-                    e.Row.BackColor = System.Drawing.Color.FromArgb(255, 255, 141);
+                    gvQuestionnaireHistory.JSProperties["cpReportPQID"] = securityAgent.EncryptText(PQID.ToString());
                 }
-                else if (e.GetValue("RiskCategory").ToString().Equals("Low"))
-                {
-                    e.Row.BackColor = System.Drawing.Color.FromArgb(204, 255, 144);
-                }
+            }
+            catch (Exception ex)
+            {
+                CommonHelpers.writeLogToFile("gvQuestionnaireHistory_CustomButtonCallback: PatientList.aspx", ex.Message);
             }
         }
     }
