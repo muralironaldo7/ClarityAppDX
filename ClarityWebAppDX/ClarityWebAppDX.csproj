@@ -199,7 +199,7 @@
     <Compile Include="EditQuestionnaire.aspx.designer.cs">
       <DependentUpon>EditQuestionnaire.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\PatientReport.cs">
+    <Compile Include="Reports\ConsolidateReport.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\QuestionnaireResponse.cs">
@@ -268,8 +268,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Reports\PatientReport.resx">
-      <DependentUpon>PatientReport.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\ConsolidateReport.resx">
+      <DependentUpon>ConsolidateReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\QuestionnaireResponse.resx">
       <DependentUpon>QuestionnaireResponse.cs</DependentUpon>

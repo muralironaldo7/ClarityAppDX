@@ -7,7 +7,7 @@ using DevExpress.XtraReports.UI;
 /// <summary>
 /// Summary description for PatientReport
 /// </summary>
-public class PatientReport : DevExpress.XtraReports.UI.XtraReport
+public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
 {
     private DevExpress.XtraReports.UI.DetailBand Detail;
     private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
@@ -32,7 +32,7 @@ public class PatientReport : DevExpress.XtraReports.UI.XtraReport
     /// </summary>
     private System.ComponentModel.IContainer components = null;
 
-    public PatientReport()
+    public ConsolidatedReport()
     {
         InitializeComponent();
         //
@@ -74,10 +74,10 @@ public class PatientReport : DevExpress.XtraReports.UI.XtraReport
             this.valDOB = new DevExpress.XtraReports.UI.XRLabel();
             this.HeaderLine = new DevExpress.XtraReports.UI.XRLine();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.ReportDate = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportDateVal = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -146,7 +146,7 @@ public class PatientReport : DevExpress.XtraReports.UI.XtraReport
             // 
             this.PPGLogo.ImageUrl = "C:\\Users\\mvenugopalan\\Desktop\\Personal\\Projects\\ClarityAppDX\\ClarityWebAppDX\\Imag" +
     "es\\logo.png";
-            this.PPGLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.00001F);
+            this.PPGLogo.LocationFloat = new DevExpress.Utils.PointFloat(11.04164F, 10.00001F);
             this.PPGLogo.Name = "PPGLogo";
             this.PPGLogo.SizeF = new System.Drawing.SizeF(148.9583F, 69.00002F);
             this.PPGLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
@@ -228,6 +228,19 @@ public class PatientReport : DevExpress.XtraReports.UI.XtraReport
             this.PageFooter.HeightF = 37.5F;
             this.PageFooter.Name = "PageFooter";
             // 
+            // xrLine1
+            // 
+            this.xrLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.xrLine1.BorderWidth = 1F;
+            this.xrLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.xrLine1.LineWidth = 2;
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLine1.Name = "xrLine1";
+            this.xrLine1.SizeF = new System.Drawing.SizeF(820F, 13.16666F);
+            this.xrLine1.StylePriority.UseBorderColor = false;
+            this.xrLine1.StylePriority.UseBorderWidth = false;
+            this.xrLine1.StylePriority.UseForeColor = false;
+            // 
             // ReportDate
             // 
             this.ReportDate.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -265,20 +278,7 @@ public class PatientReport : DevExpress.XtraReports.UI.XtraReport
             this.xrPageInfo1.StylePriority.UseFont = false;
             this.xrPageInfo1.StylePriority.UseForeColor = false;
             // 
-            // xrLine1
-            // 
-            this.xrLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.xrLine1.BorderWidth = 1F;
-            this.xrLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.xrLine1.LineWidth = 2;
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(820F, 13.16666F);
-            this.xrLine1.StylePriority.UseBorderColor = false;
-            this.xrLine1.StylePriority.UseBorderWidth = false;
-            this.xrLine1.StylePriority.UseForeColor = false;
-            // 
-            // PatientReport
+            // ConsolidatedReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,

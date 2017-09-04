@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <dx:ASPxGridView ID="PatientListGridView" ClientIDMod="Static" ClientInstanceName="PatientListGridView" runat="server" AutoGenerateColumns="False" Width="100%" KeyFieldName="PatientID"
-                                OnDataBinding="PatientListGridView_DataBinding" OnCellEditorInitialize="PatientListGridView_CellEditorInitialize" OnRowInserting="PatientListGridView_RowInserting" OnRowUpdating="PatientListGridView_RowUpdating">
+                                OnDataBinding="PatientListGridView_DataBinding" OnCellEditorInitialize="PatientListGridView_CellEditorInitialize" OnRowInserting="PatientListGridView_RowInserting" OnRowUpdating="PatientListGridView_RowUpdating" OnCustomButtonCallback="PatientListGridView_CustomButtonCallback">
                                 <SettingsSearchPanel Visible="True" />
                                 <SettingsBehavior AllowSelectByRowClick="true" AllowSelectSingleRowOnly = "true" />
                                 <SettingsCommandButton>
@@ -36,7 +36,7 @@
                                         <Image ToolTip="Cancel" Url="Images/Icons/Cancel.png" Height="32"/>
                                     </CancelButton>
                                     <EditButton>
-                                        <Image ToolTip="Cancel" Url="Images/Icons/EditRow.png" Height="32"/>
+                                        <Image ToolTip="Edit" Url="Images/Icons/EditRow.png" Height="32"/>
                                     </EditButton>
                                 </SettingsCommandButton>
                                 <SettingsAdaptivity AdaptivityMode="HideDataCellsWindowLimit" HideDataCellsAtWindowInnerWidth="800">
@@ -45,7 +45,12 @@
                                     </AdaptiveDetailLayoutProperties>
                                 </SettingsAdaptivity>
                                 <Columns>
-                                    <dx:GridViewCommandColumn ShowEditButton="true" ShowDeleteButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ButtonRenderMode="Image" Width="50">
+                                    <dx:GridViewCommandColumn ShowEditButton="true" ShowDeleteButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ButtonRenderMode="Image" Width="70">
+                                        <CustomButtons>
+                                            <dx:GridViewCommandColumnCustomButton ID="ConsolidatedReport">
+                                                <Image ToolTip="Consolidated REport" Url="Images/Icons/Report.png" Height="32" />
+                                            </dx:GridViewCommandColumnCustomButton>
+                                        </CustomButtons>
                                     </dx:GridViewCommandColumn>
                                     <dx:GridViewDataTextColumn FieldName="PatientFirstName" Name="colFirstName" VisibleIndex="1" Caption="First Name">
                                         <PropertiesTextEdit>
@@ -79,7 +84,7 @@
                                         <PropertiesComboBox TextField="PhysicianName" ValueField="PhysicianID" ValueType="System.String" IncrementalFilteringMode="Contains"></PropertiesComboBox>
                                     </dx:GridViewDataComboBoxColumn>
                                 </Columns>
-                                <ClientSideEvents RowDblClick="OnPatientDblClick" />
+                                <ClientSideEvents RowDblClick="OnPatientDblClick" EndCallback="OnPatientListGridViewEndCallback" />
                             </dx:ASPxGridView>
                         </div>
                     </div>

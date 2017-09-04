@@ -28,6 +28,15 @@ namespace ClarityWebAppDX
                                 ReportViewerControl.Report = report;
                             }
                             break;
+                        case "PatientReport":
+                            if (Request.QueryString["PatientID"] != null)
+                            {
+                                ConsolidatedReport report = new ConsolidatedReport();
+                                securityAgent = new CryptoProvider();
+                                //report.Parameters["PQID"].Value = securityAgent.decryptText(Request.QueryString["PQID"].Replace(" ", "+"));
+                                ReportViewerControl.Report = report;
+                            }
+                            break;
                     }
                 }
             }

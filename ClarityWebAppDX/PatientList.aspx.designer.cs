@@ -22,6 +22,15 @@ namespace ClarityWebAppDX {
         protected global::DevExpress.Web.ASPxGridView PatientListGridView;
         
         /// <summary>
+        /// ConsolidatedReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton ConsolidatedReport;
+        
+        /// <summary>
         /// PatientDetailsPanel control.
         /// </summary>
         /// <remarks>

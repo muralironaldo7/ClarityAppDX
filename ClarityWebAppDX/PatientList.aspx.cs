@@ -368,5 +368,24 @@ namespace ClarityWebAppDX
                 CommonHelpers.writeLogToFile("gvQuestionnaireHistory_CustomButtonCallback: PatientList.aspx", ex.Message);
             }
         }
+
+        protected void PatientListGridView_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)
+        {
+            try
+            {
+                securityAgent = new CryptoProvider();
+                ASPxGridView gv = (ASPxGridView)sender;
+                object PatientID = gv.GetRowValues(e.VisibleIndex, "PatientID");
+                if (PatientID != null)
+                {
+                    PatientListGridView.JSProperties["cpReportPatientID"] = securityAgent.EncryptText(PatientID.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonHelpers.writeLogToFile("PatientListGridView_CustomButtonCallback: PatientList.aspx", ex.Message);
+            }
+
+        }
     }
 }
