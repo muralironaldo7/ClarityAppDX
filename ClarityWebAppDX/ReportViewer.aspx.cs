@@ -33,7 +33,7 @@ namespace ClarityWebAppDX
                             {
                                 ConsolidatedReport report = new ConsolidatedReport();
                                 securityAgent = new CryptoProvider();
-                                //report.Parameters["PQID"].Value = securityAgent.decryptText(Request.QueryString["PQID"].Replace(" ", "+"));
+                                report.Parameters["@PatientID"].Value = securityAgent.decryptText(Request.QueryString["PatientID"].Replace(" ", "+"));
                                 ReportViewerControl.Report = report;
                             }
                             break;
