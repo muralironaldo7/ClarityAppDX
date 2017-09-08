@@ -322,7 +322,7 @@ namespace Clarity.DataAccess
         {
             string dPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Exceptions");
             string dMsg = "[" + DateTime.Now.ToString() + "] - " + Modulename + " | " + msg;
-            string filename = dPath + DateTime.Now.Date.ToString("yyyyMMdd") + ".txt";
+            string filename = Path.Combine(dPath, DateTime.Now.Date.ToString("yyyyMMdd") + ".txt");
             StreamWriter oStream = new StreamWriter(filename, true);
             oStream.WriteLine(dMsg);
             oStream.Flush();

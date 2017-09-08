@@ -24,3 +24,4 @@
 [9/5/2017 7:48:39 AM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
 [9/5/2017 7:48:44 AM] - gvQuestionnaireHistory_DataBinding: PatientList.aspx | Procedure or function 'spGetPatientQuestionnaireList' expects parameter '@ParamPatientID', which was not supplied.
 [9/5/2017 7:49:57 AM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[9/5/2017 7:50:29 AM] - gvQuestionnaireHistory_DataBinding: PatientList.aspx | Procedure or function 'spGetPatientQuestionnaireList' expects parameter '@ParamPatientID', which was not supplied.
