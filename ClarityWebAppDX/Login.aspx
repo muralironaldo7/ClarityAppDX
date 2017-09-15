@@ -19,7 +19,7 @@
                         <img src="Images/logo.png" />
                     </div>
                     <div class="col-sm-12">
-                        <h4 class="TitleText darkFont">Clarity Administration</h4>
+                        <h4 class="TitleText darkFont">CliniLogix Administration</h4>
                     </div>
                 </div>
                 <hr class="divider"/>

@@ -44,7 +44,9 @@
                             </dx:GridViewCommandColumn>
                             <dx:GridViewDataTextColumn Caption="Configuration Name" Name="ConfigurationName" VisibleIndex="2" FieldName="ConfigurationName" ReadOnly="True">
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn Caption="Configuration Value" Name="ConfigurationValue" VisibleIndex="3" FieldName="ConfigurationValue">
+                            <dx:GridViewDataTextColumn Caption="Min Value" Name="MinValue" VisibleIndex="3" FieldName="ConfigMinValue">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Max Value" Name="MaxValue" VisibleIndex="4" FieldName="ConfigMaxValue">
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataTextColumn Caption="ConfigurationID" Name="ConfigurationID" Visible="False" VisibleIndex="1" FieldName="ConfigID">
                             </dx:GridViewDataTextColumn>

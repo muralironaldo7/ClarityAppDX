@@ -28,8 +28,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <dx:ASPxComboBox ID="cmbRiskType" runat="server" ClientInstanceName="cmbRiskType" Caption="Risk Type" Width="100%" DataSourceID="ConfigDataSource" OnDataBinding="cmbRiskType_DataBinding" TextField="ConfigurationName" ValueField="TypeID" >
+                    <div class="col-md-4">
+                        <dx:ASPxComboBox ID="cmbRiskType" runat="server" ClientInstanceName="cmbRiskType" Caption="Risk Type" Width="100%" DataSourceID="ConfigDataSource" OnDataBinding="cmbRiskType_DataBinding" TextField="ConfigurationName" ValueField="TypeID" CaptionSettings-Position="Top">
                             <ValidationSettings ValidationGroup = "Threshold" ErrorTextPosition="Bottom">
                                 <RequiredField IsRequired="true" ErrorText="Select Configuration"/>
                             </ValidationSettings>
@@ -37,8 +37,17 @@
                         </dx:ASPxComboBox>
                         <asp:SqlDataSource ID="ConfigDataSource" runat="server"></asp:SqlDataSource>
                     </div>
-                    <div class="col-md-6">
-                        <dx:ASPxTextBox ID="txtRiskThreshold" runat="server" Width="100%" Caption="Risk Thresold Value" ClientInstanceName ="txtRiskThreshold">
+                    <div class="col-md-4">
+                        
+                        <dx:ASPxTextBox ID="txtMinValue" runat="server" Width="100%" Caption="Minimum Value" ClientInstanceName ="txtMinValue" CaptionSettings-Position="Top">
+                            <ValidationSettings ValidationGroup="Threshold" ErrorTextPosition="Bottom">
+                                <RequiredField IsRequired ="true" ErrorText="Enter value"/>
+                            </ValidationSettings>
+                        </dx:ASPxTextBox>
+
+                    </div>
+                    <div class="col-md-4">
+                        <dx:ASPxTextBox ID="txtMaxValue" runat="server" Width="100%" Caption="Maximum Value" ClientInstanceName ="txtMaxValue" CaptionSettings-Position="Top">
                             <ValidationSettings ValidationGroup="Threshold" ErrorTextPosition="Bottom">
                                 <RequiredField IsRequired ="true" ErrorText="Enter value"/>
                             </ValidationSettings>
@@ -85,9 +94,11 @@
                             </dx:GridViewCommandColumn>
                             <dx:GridViewDataTextColumn Caption="Configuration Type" VisibleIndex="1" Width="70%" FieldName="ConfigName">
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn Caption="Value" VisibleIndex="2" FieldName="ConfigValue">
+                            <dx:GridViewDataTextColumn Caption="Min Value" VisibleIndex="3" FieldName="MinValue">
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn Caption="TypeID" VisibleIndex="3" FieldName="TypeID" Visible="false">
+                            <dx:GridViewDataTextColumn Caption="Max Value" VisibleIndex="4" FieldName="MaxValue">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="TypeID" VisibleIndex="5" FieldName="TypeID" Visible="false">
                             </dx:GridViewDataTextColumn>
                         </Columns>
                     </dx:ASPxGridView>    

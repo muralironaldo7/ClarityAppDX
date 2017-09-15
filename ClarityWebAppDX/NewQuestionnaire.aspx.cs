@@ -124,7 +124,8 @@ namespace ClarityWebAppDX
                     {
                         DBAgent.AddParameter("ParamQuestionnaireID", QuestionnaireID);
                         DBAgent.AddParameter("ParamConfigID", r.ConfigID);
-                        DBAgent.AddParameter("ParamConfigValue", r.ConfigValue);
+                        DBAgent.AddParameter("ParamMinValue", r.MinValue);
+                        DBAgent.AddParameter("ParamMaxValue", r.MaxValue);
                         DBAgent.ExecuteNonQuery("spAddQuestionnaireConfig", ConfigurationManager.AppSettings["DBName"]);
                     }
 
@@ -152,7 +153,7 @@ namespace ClarityWebAppDX
                 {
                     listDataSource = new BindingList<Record>();
                 }
-                Record newRecord = new Record(cmbRiskType.Text, int.Parse(txtRiskThreshold.Text), int.Parse(cmbRiskType.Value.ToString()));
+                Record newRecord = new Record(cmbRiskType.Text, int.Parse(cmbRiskType.Value.ToString()), int.Parse(txtMinValue.Text), int.Parse(txtMaxValue.Text));
                 bool ConfigType = false;
                 foreach (Record r in listDataSource)
                 {
@@ -171,8 +172,10 @@ namespace ClarityWebAppDX
 
                 cmbRiskType.SelectedIndex = -1;
                 cmbRiskType.Value = null;
-                txtRiskThreshold.Value = "";
-                txtRiskThreshold.Text = "";
+                txtMinValue.Value = "";
+                txtMaxValue.Value = "";
+                txtMinValue.Text = "";
+                txtMaxValue.Text = "";
                 gvConfig.DataBind();
             }
             catch (Exception ex)
@@ -187,12 +190,14 @@ namespace ClarityWebAppDX
     {
         int TypeID;
         string configName;
-        int configvalue;
-        public Record(string name, int value, int id)
+        int minValue;
+        int maxValue;
+        public Record(string name, int id, int minVal, int maxVal)
         {
             this.TypeID = id;
             this.configName = name;
-            this.configvalue = value;
+            this.minValue = minVal;
+            this.maxValue = maxVal;
         }
 
         public string ConfigName
@@ -200,15 +205,24 @@ namespace ClarityWebAppDX
             get { return configName; }
             set { configName = value; }
         }
-        public int ConfigValue
-        {
-            get { return configvalue; }
-            set { configvalue = value; }
-        }
+        
         public int ConfigID
         {
             get { return TypeID; }
             set { TypeID = value; }
         }
+
+        public int MinValue
+        {
+            get { return minValue; }
+            set { minValue = value; }
+        }
+
+        public int MaxValue
+        {
+            get { return maxValue; }
+            set { maxValue = value; }
+        }
+
     }
 }

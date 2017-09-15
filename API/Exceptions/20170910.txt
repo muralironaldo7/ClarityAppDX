@@ -1,0 +1,16 @@
+[9/10/2017 12:48:47 PM] - API: PostPatientList - PatientListController.cs | Object reference not set to an instance of an object.
+   at API.CommonHelpers.ValidateRequest(String UserToken) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Global.asax.cs:line 54
+   at API.Controllers.PatientListController.PostPatientList(PatientListRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\PatientListController.cs:line 24
+[9/10/2017 12:50:29 PM] - ExecuteNonQuery | Procedure or function 'spAddUserAction' expects parameter '@ParamRefID', which was not supplied.
+[9/10/2017 12:50:29 PM] - API: PostPatientList - PatientListController.cs | Procedure or function 'spAddUserAction' expects parameter '@ParamRefID', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Clarity.DataAccess.DataAccessProvider.ExecuteNonQuery(String SPName, String ParamDBName) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\Clarity.DataAccess\DataAccessProvider.cs:line 210
+   at API.Controllers.PatientListController.PostPatientList(PatientListRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\PatientListController.cs:line 72

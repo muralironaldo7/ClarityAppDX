@@ -1,0 +1,48 @@
+[9/11/2017 4:24:06 PM] - API: PostPatientQuestionnaire - PatientQuestionnaireController.cs | Column 'Score' does not belong to table Table.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at API.Controllers.PatientQuestionnaireController.PostPatientQuestionnaire(PatientQuestionnaireRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\PatientQuestionnaireController.cs:line 45
+[9/11/2017 5:29:50 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:29:55 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:31:36 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:31:39 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:32:38 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:33:36 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:34:20 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:35:07 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:36:38 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:37:26 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:37:28 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:37:29 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:38:26 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:38:29 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:41:27 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:42:28 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 27
+[9/11/2017 5:42:59 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 27
+[9/11/2017 5:43:35 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:43:36 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:43:37 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:43:38 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24
+[9/11/2017 5:43:38 PM] - API: PostQuestionnaireQuestions - QuestionnaireQuestionsController.cs | Object reference not set to an instance of an object.
+   at API.Controllers.QuestionnaireQuestionsController.PostQuestionnaireQuestions(QuestionnaireQuestionsRequest request) in C:\Users\mvenugopalan\Desktop\Personal\Projects\ClarityAppDX\API\Controllers\QuestionnaireQuestionsController.cs:line 24

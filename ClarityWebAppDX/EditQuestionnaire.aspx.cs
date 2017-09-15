@@ -111,7 +111,8 @@ namespace ClarityWebAppDX
                 DBAgent = new DataAccessProvider(DataAccessProvider.ParamType.ServerCredentials, ConfigurationManager.AppSettings["DBServerName"], ConfigurationManager.AppSettings["DBUserName"], ConfigurationManager.AppSettings["DBPassword"]);
                 DBAgent.AddParameter("@ParamQuestionnaireID", cmbQuestionnaireList.SelectedItem.Value);
                 DBAgent.AddParameter("@ParamConfigID", e.Keys[0]);
-                DBAgent.AddParameter("@ParamConfigValue", e.NewValues[1]);
+                DBAgent.AddParameter("@ParamConfigMinValue", e.NewValues[1]);
+                DBAgent.AddParameter("@ParamConfigMaxValue", e.NewValues[2]);
                 DBAgent.ExecuteNonQuery("dbo.spEditQuestionnaireConfig");
                 ConfigGridView.CancelEdit();
                 ConfigGridView.DataBind();

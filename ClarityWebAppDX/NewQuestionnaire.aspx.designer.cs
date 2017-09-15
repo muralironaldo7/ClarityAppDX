@@ -40,13 +40,22 @@ namespace ClarityWebAppDX {
         protected global::System.Web.UI.WebControls.SqlDataSource ConfigDataSource;
         
         /// <summary>
-        /// txtRiskThreshold control.
+        /// txtMinValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox txtRiskThreshold;
+        protected global::DevExpress.Web.ASPxTextBox txtMinValue;
+        
+        /// <summary>
+        /// txtMaxValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtMaxValue;
         
         /// <summary>
         /// ConfigurationCallback control.

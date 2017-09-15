@@ -65,6 +65,7 @@ namespace ClarityWebAppDX
                         else
                         {
                             TempPassword = false;
+                            string test = securityAgent.EncryptText("ClarityApp");
                             upassword = securityAgent.decryptText(dRow["Password"].ToString().Replace(" ", "+"));
                         }
 

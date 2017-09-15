@@ -4,7 +4,8 @@
 }
 
 function gvConfigEndCallback(s, e) {
-    txtRiskThreshold.SetValue('');
+    txtMinValue.SetValue('');
+    txtMaxValue.SetValue('');
     cmbRiskType.SetSelectedIndex(-1);
 }
 
