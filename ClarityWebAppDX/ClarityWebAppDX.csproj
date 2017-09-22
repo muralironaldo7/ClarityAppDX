@@ -205,6 +205,12 @@
     <Compile Include="Reports\QuestionnaireResponse.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\TestSummaryReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TestSummaryReport.Designer.cs">
+      <DependentUpon>TestSummaryReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewQuestionnaire.aspx.cs">
       <DependentUpon>ViewQuestionnaire.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\QuestionnaireResponse.resx">
       <DependentUpon>QuestionnaireResponse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TestSummaryReport.resx">
+      <DependentUpon>TestSummaryReport.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
