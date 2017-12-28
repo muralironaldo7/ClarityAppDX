@@ -31,6 +31,33 @@ namespace ClarityWebAppDX {
         protected global::DevExpress.Web.GridViewCommandColumnCustomButton ConsolidatedReport;
         
         /// <summary>
+        /// LatestVisit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton LatestVisit;
+        
+        /// <summary>
+        /// ConsolidatedHint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHint ConsolidatedHint;
+        
+        /// <summary>
+        /// LatestHint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHint LatestHint;
+        
+        /// <summary>
         /// PatientDetailsPanel control.
         /// </summary>
         /// <remarks>

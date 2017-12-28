@@ -11,7 +11,21 @@ function gvQuestionnaireHistoryEndCallback(s, e) {
 }
 
 function OnPatientListGridViewEndCallback(s, e) {
-    if (s.cpReportPatientID) {
-        window.open('ReportViewer.aspx?PatientID=' + s.cpReportPatientID + '&Type=PatientReport', '_blank');
+    if (s.cpReportPatientID != null)
+    {
+        if (s.cpReportPatientID) {
+            if (s.cpButtonID != null)
+            {
+                if (s.cpButtonID == 'ConsolidatedReport') {
+                    window.open('ReportViewer.aspx?PatientID=' + s.cpReportPatientID + '&Type=PatientReport', '_blank');
+                }
+                else if (s.cpButtonID == 'LatestVisit') {
+                    window.open('ReportViewer.aspx?PatientID=' + s.cpReportPatientID + '&Type=VisitDetails', '_blank');
+                }
+            }
+            delete s.cpButtonID;
+            delete s.cpReportPatientID;
+        }
     }
+    
 }

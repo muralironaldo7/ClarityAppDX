@@ -47,8 +47,12 @@
                                 <Columns>
                                     <dx:GridViewCommandColumn ShowEditButton="true" ShowDeleteButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ButtonRenderMode="Image" Width="70">
                                         <CustomButtons>
-                                            <dx:GridViewCommandColumnCustomButton ID="ConsolidatedReport">
-                                                <Image ToolTip="Consolidated REport" Url="Images/Icons/Report.png" Height="32" />
+                                            <dx:GridViewCommandColumnCustomButton ID="ConsolidatedReport" Styles-Style-CssClass="ConsolidatedHint">
+                                                <Image ToolTip="Consolidated Report" Url="Images/Icons/Report.png" Height="32"/>
+                                            </dx:GridViewCommandColumnCustomButton>
+
+                                            <dx:GridViewCommandColumnCustomButton ID="LatestVisit" Styles-Style-CssClass="LatestVisitHint">
+                                                <Image ToolTip="Latest Visit" Url="Images/Icons/LatestChart.png" Height="32" />
                                             </dx:GridViewCommandColumnCustomButton>
                                         </CustomButtons>
                                     </dx:GridViewCommandColumn>
@@ -86,6 +90,8 @@
                                 </Columns>
                                 <ClientSideEvents RowDblClick="OnPatientDblClick" EndCallback="OnPatientListGridViewEndCallback" />
                             </dx:ASPxGridView>
+                            <dx:ASPxHint ID="ConsolidatedHint" runat="server" TargetSelector=".ConsolidatedHint" Content="Consolidated Patient Report" />
+                            <dx:ASPxHint ID="LatestHint" runat="server" TargetSelector=".LatestVisitHint" Content="Latest Patient Visit Report" />
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Clarity.CryptoProvider;
+using ClarityWebAppDX.Reports;
 
 namespace ClarityWebAppDX
 {
@@ -37,6 +38,17 @@ namespace ClarityWebAppDX
                                 ReportViewerControl.Report = report;
                             }
                             break;
+                        case "VisitDetails":
+                            if (Request.QueryString["PatientID"] != null)
+                            {
+                                TestSummaryReport report = new TestSummaryReport();
+                                securityAgent = new CryptoProvider();
+                                report.Parameters["@PatientID"].Value = securityAgent.decryptText(Request.QueryString["PatientID"].Replace(" ", "+"));
+                                ReportViewerControl.Report = report;
+                            }
+                            break;
+
+                            
                     }
                 }
             }

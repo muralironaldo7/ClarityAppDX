@@ -14,6 +14,7 @@ namespace ClarityWebAppDX
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            //MaterialOrange.ThemesProviderEx.Register();
         }
     }
 

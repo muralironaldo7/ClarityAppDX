@@ -380,6 +380,7 @@ namespace ClarityWebAppDX
                 {
                     PatientListGridView.JSProperties["cpReportPatientID"] = securityAgent.EncryptText(PatientID.ToString());
                 }
+                PatientListGridView.JSProperties["cpButtonID"] = e.ButtonID;
             }
             catch (Exception ex)
             {
