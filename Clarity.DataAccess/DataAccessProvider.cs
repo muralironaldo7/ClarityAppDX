@@ -16,7 +16,7 @@ namespace Clarity.DataAccess
         private string ConnectionString = "";
         private SqlConnectionStringBuilder ConnStringBuilder;
         private string DBServerName = "clove.arvixe.com";
-        private string DBName = "ClarityDB";
+        private string DBName = "clogix_ppg";
         private Dictionary<string, object> ParamCollection;
 
 

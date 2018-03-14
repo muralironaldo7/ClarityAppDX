@@ -49,23 +49,23 @@
             this.Heading = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.QuestionCell = new DevExpress.XtraReports.UI.XRTableCell();
             this.AnswerCell = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.Testname = new DevExpress.XtraReports.UI.XRLabel();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.@PatientID = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.@PatientID = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -241,6 +241,18 @@
             this.Detail1.HeightF = 80.20834F;
             this.Detail1.Name = "Detail1";
             // 
+            // xrLine1
+            // 
+            this.xrLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.xrLine1.BorderWidth = 0.5F;
+            this.xrLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 60.41667F);
+            this.xrLine1.Name = "xrLine1";
+            this.xrLine1.SizeF = new System.Drawing.SizeF(820F, 13.16666F);
+            this.xrLine1.StylePriority.UseBorderColor = false;
+            this.xrLine1.StylePriority.UseBorderWidth = false;
+            this.xrLine1.StylePriority.UseForeColor = false;
+            // 
             // xrTable1
             // 
             this.xrTable1.Borders = DevExpress.XtraPrinting.BorderSide.None;
@@ -310,6 +322,19 @@
             this.xrTableCell1.StylePriority.UsePadding = false;
             this.xrTableCell1.Weight = 0.801829737357515D;
             // 
+            // xrTableCell6
+            // 
+            this.xrTableCell6.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
+            this.xrTableCell6.Name = "xrTableCell6";
+            this.xrTableCell6.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 5, 0, 100F);
+            this.xrTableCell6.StylePriority.UseBorders = false;
+            this.xrTableCell6.StylePriority.UseFont = false;
+            this.xrTableCell6.StylePriority.UseForeColor = false;
+            this.xrTableCell6.StylePriority.UsePadding = false;
+            this.xrTableCell6.Weight = 1.0060968624723627D;
+            // 
             // GroupHeader1
             // 
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -332,37 +357,6 @@
             this.Testname.StylePriority.UseForeColor = false;
             this.Testname.StylePriority.UseTextAlignment = false;
             this.Testname.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "ClarityDB_Connection";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"100\" Height=\"208\" />";
-            storedProcQuery1.Name = "spGetPatientConsolidatedTestSummary";
-            queryParameter1.Name = "@ParamPatientID";
-            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.@PatientID]", typeof(int));
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "spGetPatientConsolidatedTestSummary";
-            storedProcQuery2.MetaSerializable = "<Meta X=\"140\" Y=\"20\" Width=\"100\" Height=\"254\" />";
-            storedProcQuery2.Name = "spGetPatientDetails";
-            queryParameter2.Name = "@ParamPatientID";
-            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.@PatientID]", typeof(int));
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "spGetPatientDetails";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1,
-            storedProcQuery2});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
-            // 
-            // @PatientID
-            // 
-            this.@PatientID.Description = "Patient ID";
-            this.@PatientID.Name = "@PatientID";
-            this.@PatientID.Type = typeof(int);
-            this.@PatientID.ValueInfo = "1";
-            this.@PatientID.Visible = false;
             // 
             // xrTable2
             // 
@@ -438,30 +432,36 @@
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell5.Weight = 2.7499987792968748D;
             // 
-            // xrTableCell6
+            // sqlDataSource1
             // 
-            this.xrTableCell6.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTableCell6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.xrTableCell6.Name = "xrTableCell6";
-            this.xrTableCell6.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 5, 0, 100F);
-            this.xrTableCell6.StylePriority.UseBorders = false;
-            this.xrTableCell6.StylePriority.UseFont = false;
-            this.xrTableCell6.StylePriority.UseForeColor = false;
-            this.xrTableCell6.StylePriority.UsePadding = false;
-            this.xrTableCell6.Weight = 1.0060968624723627D;
+            this.sqlDataSource1.ConnectionName = "ClarityDB_Connection";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"100\" Height=\"208\" />";
+            storedProcQuery1.Name = "spGetPatientConsolidatedTestSummary";
+            queryParameter1.Name = "@ParamPatientID";
+            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.@PatientID]", typeof(int));
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "spGetPatientConsolidatedTestSummary";
+            storedProcQuery2.MetaSerializable = "<Meta X=\"140\" Y=\"20\" Width=\"100\" Height=\"254\" />";
+            storedProcQuery2.Name = "spGetPatientDetails";
+            queryParameter2.Name = "@ParamPatientID";
+            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.@PatientID]", typeof(int));
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "spGetPatientDetails";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1,
+            storedProcQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // xrLine1
+            // @PatientID
             // 
-            this.xrLine1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.xrLine1.BorderWidth = 0.5F;
-            this.xrLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 60.41667F);
-            this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(820F, 13.16666F);
-            this.xrLine1.StylePriority.UseBorderColor = false;
-            this.xrLine1.StylePriority.UseBorderWidth = false;
-            this.xrLine1.StylePriority.UseForeColor = false;
+            this.@PatientID.Description = "Patient ID";
+            this.@PatientID.Name = "@PatientID";
+            this.@PatientID.Type = typeof(int);
+            this.@PatientID.ValueInfo = "1";
+            this.@PatientID.Visible = false;
             // 
             // TestSummaryReport
             // 

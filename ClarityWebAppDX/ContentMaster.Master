@@ -6,7 +6,7 @@
 
 <html>
 <head runat="server">
-    <title>PPG Health - CliniLogix Administration</title>
+    <title>CliniLogix Administration</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,7 +67,7 @@
                         <img src="Images/logo.png" class="sidebarimg visible-xs"/>
 
                         <dx:ASPxNavBar ID="LeftMenuBar" runat="server" AllowSelectItem="true" EnableAnimation="true" Width="100%" OnItemClick="LeftMenuBar_ItemClick" ShowExpandButtons="false">
-                            <GroupHeaderStyle BackColor="#dddddd" Border-BorderStyle="None" Font-Bold="true" Font-Size="Medium" ForeColor="#4bb34a"></GroupHeaderStyle>
+                            <GroupHeaderStyle BackColor="#dddddd" Border-BorderStyle="None" Font-Bold="true" Font-Size="Medium" ForeColor="#3498db"></GroupHeaderStyle>
                             <GroupHeaderStyleCollapsed BackColor="White"></GroupHeaderStyleCollapsed>
                             <GroupContentStyle BackColor="White" Border-BorderStyle="None"></GroupContentStyle>
                             <Groups>

@@ -1,0 +1,4 @@
+[1/22/2018 8:57:16 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[1/22/2018 10:06:24 PM] - cmdLogin_Click: Login.aspx | Thread was being aborted.
+[1/22/2018 10:11:59 PM] - ExecuteStoredProcedure | Procedure or function 'spGetPatientQuestionnaireList' expects parameter '@ParamPatientID', which was not supplied.
+[1/22/2018 10:11:59 PM] - gvQuestionnaireHistory_DataBinding: PatientList.aspx | Procedure or function 'spGetPatientQuestionnaireList' expects parameter '@ParamPatientID', which was not supplied.

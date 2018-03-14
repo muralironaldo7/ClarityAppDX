@@ -110,12 +110,12 @@
                                 <hr class="divider"/>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <dx:ASPxTextBox ID="txtPatientAccount" runat="server" Width="100%" Caption="Patient Account Number" ReadOnly ="true" Border-BorderStyle="None" ForeColor="#4bb34a" Font-Bold="true" Font-Size="Medium">
+                                        <dx:ASPxTextBox ID="txtPatientAccount" runat="server" Width="100%" Caption="Patient Account Number" ReadOnly ="true" Border-BorderStyle="None" ForeColor="#3498db" Font-Bold="true" Font-Size="Medium">
                                             <CaptionStyle ForeColor="#333333"></CaptionStyle>
                                         </dx:ASPxTextBox>
                                     </div>
                                     <div class="col-sm-6">
-                                        <dx:ASPxTextBox ID="txtPatientName" runat="server" Width="100%" Caption="Patient Name" ReadOnly ="true" Border-BorderStyle="None" ForeColor="#4bb34a" Font-Bold="true" Font-Size="Medium">
+                                        <dx:ASPxTextBox ID="txtPatientName" runat="server" Width="100%" Caption="Patient Name" ReadOnly ="true" Border-BorderStyle="None" ForeColor="#3498db" Font-Bold="true" Font-Size="Medium">
                                             <CaptionStyle ForeColor="#333333"></CaptionStyle>
                                         </dx:ASPxTextBox>
                                     </div>

@@ -115,7 +115,7 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.QuestionVal = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.PQID = new DevExpress.XtraReports.Parameters.Parameter();
+            this.@PQID = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -507,13 +507,13 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             storedProcQuery1.Name = "spGetPatientQuestionnaireDetailsReport";
             queryParameter1.Name = "@ParamPQID";
             queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.PQID]", typeof(int));
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.@PQID]", typeof(int));
             storedProcQuery1.Parameters.Add(queryParameter1);
             storedProcQuery1.StoredProcName = "spGetPatientQuestionnaireDetailsReport";
             storedProcQuery2.Name = "spGetPatientDetailsReport";
             queryParameter2.Name = "@ParamPQID";
             queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.PQID]", typeof(int));
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.@PQID]", typeof(int));
             storedProcQuery2.Parameters.Add(queryParameter2);
             storedProcQuery2.StoredProcName = "spGetPatientDetailsReport";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
@@ -521,13 +521,13 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // PQID
+            // @PQID
             // 
-            this.PQID.Description = "PQID";
-            this.PQID.Name = "PQID";
-            this.PQID.Type = typeof(int);
-            this.PQID.ValueInfo = "0";
-            this.PQID.Visible = false;
+            this.@PQID.Description = "PQID";
+            this.@PQID.Name = "@PQID";
+            this.@PQID.Type = typeof(int);
+            this.@PQID.ValueInfo = "0";
+            this.@PQID.Visible = false;
             // 
             // QuestionnaireResponse
             // 
@@ -549,7 +549,7 @@ public class QuestionnaireResponse : DevExpress.XtraReports.UI.XtraReport
             this.LowRisk});
             this.Margins = new System.Drawing.Printing.Margins(25, 23, 26, 34);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.PQID});
+            this.@PQID});
             this.RequestParameters = false;
             this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

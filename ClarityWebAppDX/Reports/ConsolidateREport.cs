@@ -214,9 +214,9 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             // PPGLogo
             // 
             this.PPGLogo.Image = ((System.Drawing.Image)(resources.GetObject("PPGLogo.Image")));
-            this.PPGLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 23F);
+            this.PPGLogo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 23.00002F);
             this.PPGLogo.Name = "PPGLogo";
-            this.PPGLogo.SizeF = new System.Drawing.SizeF(148.9583F, 69.00002F);
+            this.PPGLogo.SizeF = new System.Drawing.SizeF(166.0416F, 69.00002F);
             this.PPGLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
             // 
             // LastName
