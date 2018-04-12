@@ -397,11 +397,11 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             this.ReportDateVal.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportDateVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
             this.ReportDateVal.Format = "{0:MMMM d, yyyy h:mm tt}";
-            this.ReportDateVal.LocationFloat = new DevExpress.Utils.PointFloat(110.2084F, 13.16666F);
+            this.ReportDateVal.LocationFloat = new DevExpress.Utils.PointFloat(110.2084F, 13.16668F);
             this.ReportDateVal.Name = "ReportDateVal";
             this.ReportDateVal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ReportDateVal.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.ReportDateVal.SizeF = new System.Drawing.SizeF(205.6667F, 23F);
+            this.ReportDateVal.SizeF = new System.Drawing.SizeF(176.4583F, 23F);
             this.ReportDateVal.StylePriority.UseFont = false;
             this.ReportDateVal.StylePriority.UseForeColor = false;
             // 
@@ -496,13 +496,13 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             this.valQuestionnarieName});
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("QuestionnaireName", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader1.HeightF = 93.33334F;
+            this.GroupHeader1.HeightF = 94.37498F;
             this.GroupHeader1.KeepTogether = true;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
             // xrTable2
             // 
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(3.051758E-05F, 68.33334F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 67.29164F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
@@ -556,7 +556,7 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             // 
             this.lblRiskCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRiskCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.lblRiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(579.7917F, 36.16667F);
+            this.lblRiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(579.7916F, 33.87502F);
             this.lblRiskCategory.Name = "lblRiskCategory";
             this.lblRiskCategory.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblRiskCategory.SizeF = new System.Drawing.SizeF(116.8749F, 23F);
@@ -572,7 +572,7 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientConsolidatedQuestionnaireList.RiskCategory")});
             this.valRiskCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valRiskCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.valRiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(696.6666F, 36.16667F);
+            this.valRiskCategory.LocationFloat = new DevExpress.Utils.PointFloat(696.6666F, 33.87502F);
             this.valRiskCategory.Name = "valRiskCategory";
             this.valRiskCategory.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.valRiskCategory.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
@@ -583,7 +583,7 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             // 
             this.lblScore.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.lblScore.LocationFloat = new DevExpress.Utils.PointFloat(286.6664F, 36.16664F);
+            this.lblScore.LocationFloat = new DevExpress.Utils.PointFloat(286.6665F, 33.87502F);
             this.lblScore.Name = "lblScore";
             this.lblScore.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblScore.SizeF = new System.Drawing.SizeF(51.87506F, 23F);
@@ -599,7 +599,7 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientConsolidatedQuestionnaireList.Score")});
             this.valScore.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.valScore.LocationFloat = new DevExpress.Utils.PointFloat(338.5414F, 36.16664F);
+            this.valScore.LocationFloat = new DevExpress.Utils.PointFloat(338.5415F, 33.87502F);
             this.valScore.Name = "valScore";
             this.valScore.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.valScore.SizeF = new System.Drawing.SizeF(123.3333F, 23F);
@@ -612,7 +612,7 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             this.lblTestDate.CanGrow = false;
             this.lblTestDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTestDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(43)))), ((int)(((byte)(124)))));
-            this.lblTestDate.LocationFloat = new DevExpress.Utils.PointFloat(0F, 36.16664F);
+            this.lblTestDate.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 33.87502F);
             this.lblTestDate.Name = "lblTestDate";
             this.lblTestDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblTestDate.SizeF = new System.Drawing.SizeF(78.95813F, 23F);
@@ -628,7 +628,7 @@ public class ConsolidatedReport : DevExpress.XtraReports.UI.XtraReport
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "spGetPatientConsolidatedQuestionnaireList.CompletedDate")});
             this.varTestDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.varTestDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(179)))), ((int)(((byte)(74)))));
-            this.varTestDate.LocationFloat = new DevExpress.Utils.PointFloat(78.95813F, 36.16664F);
+            this.varTestDate.LocationFloat = new DevExpress.Utils.PointFloat(78.95826F, 33.87502F);
             this.varTestDate.Name = "varTestDate";
             this.varTestDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.varTestDate.SizeF = new System.Drawing.SizeF(123.3333F, 23F);

@@ -25,7 +25,7 @@ namespace ClarityWebAppDX
                             {
                                 QuestionnaireResponse report = new QuestionnaireResponse();
                                 securityAgent = new CryptoProvider();
-                                report.Parameters["PQID"].Value = securityAgent.decryptText(Request.QueryString["PQID"].Replace(" ", "+"));
+                                report.Parameters["@PQID"].Value = securityAgent.decryptText(Request.QueryString["PQID"].Replace(" ", "+"));
                                 ReportViewerControl.Report = report;
                             }
                             break;
